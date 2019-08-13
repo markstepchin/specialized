@@ -1,33 +1,64 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  background-color: rgb(18,18,18);
+  height: 2.25rem;
+  padding-left: 5rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  color: rgb(255,255,255);
+  font-weight: 500;
+  text-transform: uppercase;
 
-.App-link {
-  color: #61dafb;
-}
+  div {
+    height: 100%;
+    letter-spacing: 0.0625em;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+    span {
+      font-size: .7rem;
+      font-weight: 600;
+      padding: 0 1.5rem;
+    }
+
+    .find-retailer-icon {
+      background: url('Assets/Icons/map-marker.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+
+      position: relative;
+      top: 1px;
+      right: .5rem;
+      padding: 0; 
+    }
+
+    .flag-icon {
+      background: url('Assets/Icons/us-flag.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+
+      position: relative;
+      top: 6.25px;
+      right: 3px;
+      padding: 0; 
+    }
+
+    button {
+      width: 10rem;
+      height: 100%;
+      background-color: rgb(65,65,65);
+      color: rgb(255,255,255);
+      font-weight: 600;
+      font-size: .75rem;
+      letter-spacing: 0.0625em;
+      text-transform: uppercase;
+      border: none;
+    }
   }
 }
