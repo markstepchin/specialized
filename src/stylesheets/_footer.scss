@@ -1,0 +1,124 @@
+footer {
+  background-color: rgb(20,20,20);
+  color: white;
+  height: 17rem;
+  display: flex;
+  justify-content: space-between;
+
+  padding: 2.75rem;
+}
+
+div.footer-col-1 {
+  div:first-child {
+    display: flex;
+    align-items: center;
+
+    input, button {
+      height: 2.8rem;
+      border: none;
+      box-sizing: border-box;
+    }
+
+    input {
+      background-color: rgb(65,65,65);
+      padding: 1.25rem;
+      color: rgb(255,255,255);
+
+      &::placeholder {
+        color: rgb(151, 151, 151);
+      }
+    }
+
+    button {
+      background-color: rgb(235, 47, 41);
+      color: $whiteTextColor;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+
+      &:hover {
+        background-color: rgb(190, 38, 33);
+        transition: background-color .25s;
+      }
+    }
+  }
+
+  div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 2.5rem;
+    color: rgb(134, 134, 134);
+    font-size: .7rem;
+    letter-spacing: .05px;
+
+    a {
+      color: white;
+      margin-top: .5rem;
+      font-weight: 600;
+
+      &:hover {
+        color: $redText;
+        transition: color .125s;
+      }
+    }
+  }
+}
+
+div.footer-col-2 {
+  div.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: .75rem;
+    padding: 0 3rem;
+    margin-bottom: 2rem;
+
+    a {
+      margin: .5rem 1rem;
+      color: rgb(134, 134, 134);
+      text-decoration: none;
+
+      &:hover {
+        color: $redText;
+        transition: color .125s;
+      }
+    }
+  }
+
+  div:last-child {
+    color: rgb(134, 134, 134);
+
+    div {
+      display: flex;
+      justify-content: center;
+      font-size: .75rem;
+
+      a {
+        margin: 1.5rem 1rem;
+        color: rgb(134, 134, 134);
+        text-decoration: none;
+
+        &:hover {
+          color: $redText;
+          transition: color .125s;
+        }
+      }
+    }
+  }    
+}
+
+div.footer-col-3 {
+  button {
+    background-color: rgb(65,65,65);
+    color: $whiteTextColor;
+    text-transform: uppercase;
+    width: 18rem;
+    height: 2.8rem;
+    border: none;
+
+    &:hover {
+      background-color: rgb(190, 38, 33);
+      transition: background-color .125s;
+    }
+  }
+}
