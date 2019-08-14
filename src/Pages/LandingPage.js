@@ -22,7 +22,16 @@ const LandingPage = () => (
         <li><a href='#wut'><div id='sworks-bike-link'></div><span>S-works</span></a></li>
       </ul>
     </section>
-    <section id='image'>image</section>
+    <section id='large-image'>
+      <div>
+        <h2>Finn</h2>
+        <h2>Iles</h2>
+      </div>
+      <div>
+        <span>Duis aute irure dolor in reprehenderit <br />in voluptate velit esse cillum dolore eu</span><br />
+        <span><b> fugiat nulla pariatur.</b></span>
+      </div>
+    </section>
     <section id='video'>video</section>
     <section id='instagram'>instagram</section>
   </>
