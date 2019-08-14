@@ -1,0 +1,48 @@
+#hero {
+  position: relative;
+  background-image: url('../Assets/Images/Landing/LandingHero.jpg');
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - (#{$topHeaderHeight} + #{$bottomHeaderHeight}));
+  width: 100%;
+
+  color: white;
+
+  #hero-text {
+    position: absolute;
+    top: 15%;
+    left: 7%;
+
+    text-transform: uppercase;
+    // padding-left: 3rem;
+
+    h1 {
+      font-size: 6rem;
+      font-weight: 900;
+      text-shadow: 1px 1px 10px black;
+    }
+
+    h3 {
+      font-weight: 400;
+      text-shadow: 1px 1px 10px black;
+    }
+
+    button {
+      margin-top: 2rem;
+      padding: 1rem 3rem;
+      height: 100%;
+      background-color: rgb(41, 41, 41);
+      color: rgb(255,255,255);
+      font-weight: 600;
+      font-size: .75rem;
+      text-transform: uppercase;
+      border: none;
+    }
+  }
+
+  h1, h3 {
+    margin: 0;
+  }
+}
+
+

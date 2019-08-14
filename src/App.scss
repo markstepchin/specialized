@@ -2,5 +2,9 @@ $textColor: rgb(18,18,18);
 $whiteTextColor: rgb(255,255,255);
 $redText: rgb(235, 47, 41);
 
-@import 'stylesheets/header';
-@import 'stylesheets/footer';
+$topHeaderHeight: 2.25rem;
+$bottomHeaderHeight: 4.45rem;
+
+@import './stylesheets/header';
+@import './stylesheets/footer';
+@import './stylesheets/landingPage';

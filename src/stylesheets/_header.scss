@@ -11,7 +11,7 @@ header {
     align-items: center;
 
     div {
-      height: 2.25rem;
+      height: $topHeaderHeight;
       letter-spacing: 0.0625em;
   
       span {
@@ -65,12 +65,12 @@ header {
   }
 
   .bottom-header {
+    background-color: #fff;
     padding: 0 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 4.45rem;
-    border-bottom: 2px solid black;
+    height: $bottomHeaderHeight;
     color: $textColor;
 
     a {
