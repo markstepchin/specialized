@@ -347,3 +347,10 @@ template {
 [hidden] {
   display: none;
 }
+
+/**
+ * remove blue border on focus
+ */
+button:focus, input:focus {
+  outline: none;
+}

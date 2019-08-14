@@ -14,21 +14,21 @@ const Footer = () => (
     </div>
     <div className='footer-col-2'>
       <div className='footer-links'>
-        <span>Contact Us</span>
-        <span>FAQ's</span>
-        <span>Returns</span>
-        <span>Warranty</span>
-        <span>Test The Best</span>
-        <span>Bicycle Registration</span>
-        <span>Safety Notifications</span>
-        <span>Terms of Use</span>
-        <span>Counterfeit Awareness</span>
-        <span>Careers</span>
+        <a href='#'>Contact Us</a>
+        <a href='#'>FAQ's</a>
+        <a href='#'>Returns</a>
+        <a href='#'>Warranty</a>
+        <a href='#'>Test The Best</a>
+        <a href='#'>Bicycle Registration</a>
+        <a href='#'>Safety Notifications</a>
+        <a href='#'>Terms of Use</a>
+        <a href='#'>Counterfeit Awareness</a>
+        <a href='#'>Careers</a>
       </div>
       <div>
         <div>
-          <span>Privacy Policy</span>
-          <span>California Transparency Act</span>
+          <a href='#'>Privacy Policy</a>
+          <a href='#'>California Transparency Act</a>
         </div>
         <div>© 2019. Specialized Bicycle Components. All Rights Reserved.</div>
       </div>
