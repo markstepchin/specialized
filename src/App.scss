@@ -1,64 +1,135 @@
+$textColor: rgb(18,18,18);
+
 header {
-  background-color: rgb(18,18,18);
-  height: 2.25rem;
-  padding-left: 5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: rgb(255,255,255);
   font-weight: 500;
   text-transform: uppercase;
 
-  div {
-    height: 100%;
-    letter-spacing: 0.0625em;
+  .top-header {
+    background-color: rgb(18,18,18);
+    color: rgb(255,255,255);
+    padding-left: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    span {
-      font-size: .7rem;
-      font-weight: 600;
-      padding: 0 1.5rem;
-    }
-
-    .find-retailer-icon {
-      background: url('Assets/Icons/map-marker.svg');
-      background-position: center;
-      background-repeat: no-repeat;
-
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-
-      position: relative;
-      top: 1px;
-      right: .5rem;
-      padding: 0; 
-    }
-
-    .flag-icon {
-      background: url('Assets/Icons/us-flag.svg');
-      background-position: center;
-      background-repeat: no-repeat;
-
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-
-      position: relative;
-      top: 6.25px;
-      right: 3px;
-      padding: 0; 
-    }
-
-    button {
-      width: 10rem;
-      height: 100%;
-      background-color: rgb(65,65,65);
-      color: rgb(255,255,255);
-      font-weight: 600;
-      font-size: .75rem;
+    div {
+      height: 2.25rem;
       letter-spacing: 0.0625em;
-      text-transform: uppercase;
-      border: none;
+  
+      span {
+        font-size: .7rem;
+        font-weight: 600;
+        padding: 0 1.5rem;
+      }
+  
+      .find-retailer-icon {
+        background: url('Assets/Icons/map-marker.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+  
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+  
+        position: relative;
+        top: 1px;
+        right: .5rem;
+        padding: 0; 
+      }
+  
+      .flag-icon {
+        background: url('Assets/Icons/us-flag.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+  
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+  
+        position: relative;
+        top: 6.25px;
+        right: 3px;
+        padding: 0; 
+      }
+  
+      button {
+        padding: 0 3rem;
+        height: 100%;
+        background-color: rgb(65,65,65);
+        color: rgb(255,255,255);
+        font-weight: 600;
+        font-size: .75rem;
+        letter-spacing: 0.0625em;
+        text-transform: uppercase;
+        border: none;
+      }
+    }
+  }
+
+  .bottom-header {
+    padding: 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.45rem;
+    border-bottom: 2px solid black;
+    color: $textColor;
+
+    a {
+      text-decoration: none;
+      font-size: .85rem;
+      color: $textColor;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      height: 2.25rem;
+
+      display: flex;
+      align-items: center;
+    }
+
+    li {
+      display: inline-block;
+      margin: 0 1.5rem;
+
+      a {
+        text-decoration: none;
+        font-size: .85rem;
+        color: $textColor;
+      }
+    }
+
+    .logo {
+      background: url("./Assets/Icons/SpecializedNavLogo.png");
+      width: 150px;
+      height: 100%;
+      background-position: center;
+      background-size: contain;
+      cursor: pointer;
+    }
+
+    .cart-icon {
+      background: url('Assets/Icons/shopping-cart.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display: inline-block;
+      width: 23px;
+      height: 23px;
+      padding-left: .5rem; 
+    }
+
+    .search-icon {
+      background: url('Assets/Icons/search.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display: inline-block;
+      width: 23px;
+      height: 23px;
+      padding: 0 .5rem; 
     }
   }
 }
