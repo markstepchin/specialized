@@ -1,4 +1,5 @@
 $textColor: rgb(18,18,18);
+$whiteTextColor: rgb(255,255,255);
 
 header {
   font-weight: 500;
@@ -97,7 +98,13 @@ header {
       a {
         text-decoration: none;
         font-size: .85rem;
+        font-weight: 600;
         color: $textColor;
+        letter-spacing: -.25px;
+
+        &:hover {
+          color: rgb(217,55,49);
+        }
       }
     }
 
@@ -118,7 +125,11 @@ header {
       display: inline-block;
       width: 23px;
       height: 23px;
-      padding-left: .5rem; 
+      padding-left: .5rem;
+      
+      &:hover {
+        color: rgb(217,55,49);
+      }
     }
 
     .search-icon {
@@ -130,6 +141,116 @@ header {
       width: 23px;
       height: 23px;
       padding: 0 .5rem; 
+
+      &:hover {
+        color: rgb(217,55,49);
+      }
+    }
+  }
+}
+
+
+
+footer {
+  background-color: rgb(20,20,20);
+  color: white;
+  height: 17rem;
+  display: flex;
+  justify-content: space-between;
+
+  padding: 2.75rem;
+  // padding-bottom: 10rem;
+
+  div.footer-col-1 {
+    div:first-child {
+      display: flex;
+      align-items: center;
+
+      input, button {
+        height: 2.8rem;
+        border: none;
+        box-sizing: border-box;
+      }
+
+      input {
+        background-color: rgb(65,65,65);
+        padding: 1.25rem;
+        color: rgb(255,255,255);
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          color: rgb(151, 151, 151);
+        }
+      }
+
+      button {
+        background-color: rgb(235, 47, 41);
+        color: $whiteTextColor;
+        text-transform: uppercase;
+        padding: 1rem 2rem;
+      }
+    }
+
+    div:last-child {
+      display: flex;
+      flex-direction: column;
+
+      margin-top: 2.5rem;
+      color: rgb(134, 134, 134);
+      font-size: .7rem;
+      letter-spacing: .05px;
+
+      a {
+        color: white;
+        margin-top: .5rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  div.footer-col-2 {
+    div.footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: .75rem;
+      padding: 0 3rem;
+      margin-bottom: 2rem;
+
+      span {
+        margin: .5rem 1rem;
+      }
+    }
+
+    div:last-child {
+      color: rgb(134, 134, 134);
+
+      div {
+        display: flex;
+        justify-content: center;
+        padding: 0 10rem;
+
+        font-size: .75rem;
+
+        span {
+          margin: 1.5rem 1rem;
+        }
+      }
+    }    
+  }
+  
+  div.footer-col-3 {
+    button {
+      background-color: rgb(65,65,65);
+      color: $whiteTextColor;
+      text-transform: uppercase;
+      width: 18rem;
+      // padding: 0 10rem;
+      height: 2.8rem;
+      border: none;
     }
   }
 }

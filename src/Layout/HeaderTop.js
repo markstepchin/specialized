@@ -13,7 +13,7 @@ const Header = () => (
     <div className='bottom-header'>
       <a className='logo' href='#' />
       <ul>
-        <li><a href='#'>Bikes</a></li>
+        <li><a className="hey" href='#'>Bikes</a></li>
         <li><a href='#'>Downhill</a></li>
         <li><a href='#'>S-works</a></li>
         <li><a href='#'>inside specialized</a></li>
