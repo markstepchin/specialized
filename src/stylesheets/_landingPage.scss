@@ -79,3 +79,75 @@
     border: none;
   }
 }
+
+#categories {
+  background-color: #090909;
+  color: #fff;
+  padding: 9rem 4rem;
+
+  h3 {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+  }
+
+  li {
+    width: 33.3%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-shadow: 1px 1px 10px black;
+    
+  }
+
+  div {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .4;
+    transition: transform .5s, opacity .5s;
+    
+    &:hover {
+      transform: scale(1.1);
+      opacity: .9;
+    }
+  }
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+#trail-bike-link {
+  background-image: url('../Assets/Images/Landing/TrailBGCategoires.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#downhill-bike-link {
+  background-image: url('../Assets/Images/Landing/DownHillBGCategories.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#sworks-bike-link {
+  background-image: url('../Assets/Images/Landing/SWorksBGCategories.jpg');
+  background-size: cover;
+  background-position: center;
+}
