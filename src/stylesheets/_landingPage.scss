@@ -1,3 +1,7 @@
+section {
+  padding: 10rem 0;
+}
+
 #hero {
   position: relative;
   background-image: url('../Assets/Images/Landing/LandingHero.jpg');
@@ -49,7 +53,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 6rem;
 
   h2 {
     font-size: 2.5rem;
@@ -83,17 +86,19 @@
 #categories {
   background-color: #090909;
   color: #fff;
-  padding: 9rem 4rem;
 
   h3 {
     text-transform: uppercase;
+    font-size: 2rem;
     font-weight: 500;
+    margin-left: 4rem;
+    margin-bottom: 2rem;
   }
 
   ul {
     list-style: none;
     display: flex;
-    padding: 0;
+    padding: 0 4rem;
   }
 
   li {
@@ -186,7 +191,6 @@
 }
 
 #video {
-  padding: 7rem 0;
   background-color: #090909;
 
   h2 {
@@ -203,5 +207,84 @@
     align-items: center;
     height: 60vh;
     width: 100%;
+  }
+}
+
+#instagram {
+  padding: 4rem 5rem;
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  a {
+    color: $textColor;
+    text-decoration: none;
+    width: 22rem;
+    
+    display: flex;
+    align-items: center
+  }
+
+  img#logo {
+    height: 90px;
+  }
+
+  img#verified {
+    height: 20px
+  }
+
+  span {
+    padding: 0 .75rem;
+    font-size: 1.3rem;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+  }
+
+  li {
+    width: 33.3%;
+    overflow: hidden;
+    position: relative;
+    margin: 1rem;
+  }
+
+  div {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  #img1 {
+    background-image: url('../Assets//Images/Landing//IG1.jpg');
+  }
+
+  #img2 {
+    background-image: url('../Assets//Images/Landing//IG2.jpg');
+  }
+
+  #img3 {
+    background-image: url('../Assets//Images/Landing//IG3.jpg');
+  }
+
+  #img4 {
+    background-image: url('../Assets//Images/Landing//IG4.jpg');
+  }
+
+  #img5 {
+    background-image: url('../Assets//Images/Landing//IG5.jpg');
+  }
+
+  #img6 {
+    background-image: url('../Assets//Images/Landing//IG6.jpg');
   }
 }
