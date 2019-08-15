@@ -1,9 +1,6 @@
 import React from 'react';
 import instaLogo from "../Assets/Images/Landing/IGLogo.png";
 import verifiedLink from "../Assets/Icons&Logos/IG/Verified.svg";
-import instaPic1 from "../Assets/Images/Landing/IG1.jpg";
-import instaPic2 from "../Assets/Images/Landing/IG2.jpg";
-import instaPic3 from "../Assets/Images/Landing/IG3.jpg";
 
 const LandingPage = () => (
   <>
@@ -40,7 +37,7 @@ const LandingPage = () => (
     <section id='video'>
       <h2>The all new stuntjumper</h2>
       <div>
-        <iframe width="80%" height="90%" src="https://www.youtube.com/embed/yiNyUvYb7AM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title='stuntjumper video' width="80%" height="90%" src="https://www.youtube.com/embed/yiNyUvYb7AM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </section>
     <section id='instagram'>
