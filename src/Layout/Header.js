@@ -2,6 +2,7 @@ import React from 'react';
 
 const Header = () => (
   <header>
+    {/* <ToolBar /> */}
     <div className='top-header'>
       <span>Free shipping on orders over $150.</span>
       <div>
@@ -11,12 +12,14 @@ const Header = () => (
       </div>
     </div>
     <div className='bottom-header'>
-      <a className='logo' href='#' />
+      <ion-icon name="menu"></ion-icon>
+      <a className='logo' href='/#' />
       <ul>
-        <li><a className="hey" href='#'>Bikes</a></li>
-        <li><a href='#'>Downhill</a></li>
-        <li><a href='#'>S-works</a></li>
-        <li><a href='#'>inside specialized</a></li>
+        <li><a href='/#'>Bikes</a></li>
+        <li><a href='/#'>Trail</a></li>
+        <li><a href='/#'>Downhill</a></li>
+        <li><a href='/#'>S-works</a></li>
+        <li><a href='/#'>inside specialized</a></li>
       </ul>
       <div>
         <span className='search-icon'/>
@@ -24,6 +27,23 @@ const Header = () => (
       </div>
     </div>
   </header>
+);
+
+const ToolBar = () => (
+  <div id='toolbar'>
+    <div id='toolbar-header'>
+      <button id='close-toobar-button'><ion-icon name="close"></ion-icon></button>
+      <div>Shop</div>
+      <a href='/#'>Inside specialized</a>
+    </div>
+    <ul>
+      <li><a href='/#'>Bikes</a></li>
+      <li><a href='/#'>Trail</a></li>
+      <li><a href='/#'>Downhill</a></li>
+      <li><a href='/#'>S-works</a></li>
+      <li><a href='/#'>inside specialized</a></li>
+    </ul>
+  </div>
 );
 
 export default Header;

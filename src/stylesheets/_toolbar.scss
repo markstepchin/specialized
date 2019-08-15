@@ -1,0 +1,67 @@
+#toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ed1c24;
+  z-index: 100;
+
+  a {
+    text-decoration: none;
+    font-size: .85rem;
+    color: $textColor;
+  }
+
+  ul {
+    margin-top: .5rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+
+    a {
+      text-decoration: none;
+      font-size: 1.0625rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: white;
+      display: block;
+      padding: .85rem 1.5rem;
+    }
+  }
+
+  #toolbar-header {
+    display: flex;
+    height: 3.3rem;
+
+    div, a {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 1.0625rem;
+      font-weight: 400;
+    }
+
+    a {
+      background-color: #414141;
+    }
+
+    #close-toobar-button {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+  }
+}
+
