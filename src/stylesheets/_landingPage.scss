@@ -18,7 +18,6 @@ section {
     left: 7%;
 
     text-transform: uppercase;
-    // padding-left: 3rem;
 
     h1 {
       font-size: 6rem;
@@ -29,6 +28,7 @@ section {
     h3 {
       font-weight: 400;
       text-shadow: 1px 1px 10px black;
+      padding-right: 3rem;
     }
 
     button {
@@ -114,7 +114,6 @@ section {
     font-size: 1.5rem;
     font-weight: 800;
     text-shadow: 1px 1px 10px black;
-    
   }
 
   div {
@@ -161,15 +160,16 @@ section {
   background-image: url('../Assets/Images/Landing/LandingBigImage.jpg');
   background-size: cover;
   background-position: center;
-  height: 65vh;
+  height: 85vh;
   background-color: #090909;
+  padding: 0;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   div {
-    padding: 2rem;
+    padding: 2rem 4rem;
   }
 
   h2 {
@@ -211,6 +211,9 @@ section {
 }
 
 #instagram {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 4rem 5rem;
 
   h2 {
@@ -220,6 +223,9 @@ section {
   }
 
   a {
+    display: flex;
+    justify-content: center;
+
     color: $textColor;
     text-decoration: none;
     width: 22rem;
@@ -245,6 +251,7 @@ section {
     list-style: none;
     display: flex;
     padding: 0;
+    width: 100%;
   }
 
   li {
@@ -286,5 +293,147 @@ section {
 
   #img6 {
     background-image: url('../Assets//Images/Landing//IG6.jpg');
+  }
+}
+
+/* Large tablet: 1023px - 1200px*/
+@media only screen and (max-width: 1200px) {
+
+}
+
+/* Small tablet to large tablet: 767px - 1023px */
+@media only screen and (max-width: 1023px) {
+
+}
+
+/* small phones to small tablets: 480px - 767px */
+@media only screen and (max-width: 767px) {
+
+}
+
+/* small phones: 0 - 480px */
+@media only screen and (max-width: 480px) {
+  section {
+    padding: 5rem 0;
+  }
+
+  #hero {
+    #hero-text {
+      position: absolute;
+      top: 65%;
+      left: 5%;
+  
+      h1 {
+        font-size: 2rem;
+      }
+
+      h3 {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  #story {
+    h2 {
+      font-size: 2rem;
+    }
+  
+    p {
+      width: 85%;
+    }
+  }
+
+  #categories {
+    h3 {
+      font-size: 1.75rem;
+      font-weight: 500;
+      text-align: center;
+      margin: 0;
+      margin-bottom: .5rem;
+    }
+
+    ul {
+      padding: 0;
+    }
+  
+    a {
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    div {
+      height: 50vh;
+    }
+  
+    span {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  #large-image {
+    height: 65vh;
+  
+    div {
+      padding: .5rem;
+    }
+  
+    h2 {
+      font-size: 4.5rem;
+      line-height: 3.5rem;
+    }
+  
+    span {
+      color: white;
+      text-shadow: 1px 1px 10px black;
+    }
+  }
+
+  #video {
+    h2 {
+      text-align: center;
+      font-weight: 400;
+    }
+  
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30vh;
+      width: 100%;
+    }
+  }
+
+  #instagram {
+    padding: 4rem .25rem;
+    align-items: center;
+
+    img#logo {
+      height: 40px;
+    }
+  
+    img#verified {
+      height: 15px
+    }
+
+    ul:first-of-type {
+      margin-top: 1rem;
+    }
+
+    ul:last-of-type {
+      margin-bottom: 3rem;
+    }
+
+    ul {
+      margin: 0;
+    }
+
+    li {
+      margin: .25rem;
+    }
+  
+    div {
+      height: 120px;
+    }
   }
 }

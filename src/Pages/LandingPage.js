@@ -21,7 +21,7 @@ const LandingPage = () => (
       <ul>
         <li><a href='#hi'><div id='trail-bike-link'/><span>Trail</span></a></li>
         <li><a href='#hey'><div id='downhill-bike-link'/><span>Downhill</span></a></li>
-        <li><a href='#wut'><div id='sworks-bike-link'/><span>S-works</span></a></li>
+        <li><a href='#wut'><div id='sworks-bike-link'/><span>s-works</span></a></li>
       </ul>
     </section>
     <section id='large-image'>
