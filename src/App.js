@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.scss';
 import LandingPage from "./Pages/LandingPage";
-import HeaderTop from "./Layout/HeaderTop";
+import Header from "./Layout/Header";
 import Footer from "./Layout/Footer";
 
 
 function App() {
   return (
     <>
-      <HeaderTop />
+      <Header />
       <LandingPage />
       <Footer />
     </>
