@@ -12,10 +12,10 @@ const Header = () => (
       </div>
     </div>
     <div className='bottom-header'>
-      <ion-icon name="menu"></ion-icon>
+      <button id='menu-button'><ion-icon name="menu"></ion-icon></button>
       <a className='logo' href='/#' />
       <ul>
-        <li><a href='/#'>Bikes</a></li>
+        {/* <li><a href='/#'>Bikes</a></li> */}
         <li><a href='/#'>Trail</a></li>
         <li><a href='/#'>Downhill</a></li>
         <li><a href='/#'>S-works</a></li>
