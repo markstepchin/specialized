@@ -22,6 +22,7 @@ section {
     h1 {
       font-size: 6rem;
       font-weight: 900;
+      line-height: 5.5rem;
       text-shadow: 1px 1px 10px black;
     }
 
@@ -228,7 +229,6 @@ section {
 
     color: $textColor;
     text-decoration: none;
-    width: 22rem;
     
     display: flex;
     align-items: center
@@ -298,17 +298,94 @@ section {
 
 /* Large tablet: 1023px - 1200px*/
 @media only screen and (max-width: 1200px) {
-
+  #hero {
+    #hero-text {
+      position: absolute;
+      top: 65%;
+      left: 5%;
+    }
+  }
 }
 
 /* Small tablet to large tablet: 767px - 1023px */
 @media only screen and (max-width: 1023px) {
+  #hero {
+    #hero-text {  
+      h1 {
+        font-size: 4rem;
+        line-height: 4.5rem;
+      }
+  
+      button {
+        font-weight: 300;
+        font-size: 1.5rem;
+      }
+    }
+  }
 
+  #instagram {
+    padding: 4rem .5rem;
+    align-items: center;
+
+    img#logo {
+      height: 40px;
+    }
+
+    img#verified {
+      height: 15px
+    }
+
+    ul:first-of-type {
+      margin-top: 1rem;
+    }
+
+    ul:last-of-type {
+      margin-bottom: 3rem;
+    }
+
+    ul {
+      margin: 0;
+    }
+
+    li {
+      margin: .5rem;
+    }
+  
+    div {
+      height: 230px;
+    }
+  }
 }
 
 /* small phones to small tablets: 480px - 767px */
 @media only screen and (max-width: 767px) {
-
+  #hero {
+    #hero-text {  
+      h1 {
+        font-size: 4rem;
+        font-weight: 900;
+        line-height: 4.5rem;
+      }
+  
+      h3 {
+        font-weight: 400;
+        text-shadow: 1px 1px 10px black;
+        padding-right: 3rem;
+      }
+  
+      button {
+        margin-top: 2rem;
+        padding: 1rem 3rem;
+        height: 100%;
+        background-color: rgb(41, 41, 41);
+        color: rgb(255,255,255);
+        font-weight: 600;
+        font-size: .75rem;
+        text-transform: uppercase;
+        border: none;
+      }
+    }
+  }
 }
 
 /* small phones: 0 - 480px */
@@ -318,13 +395,10 @@ section {
   }
 
   #hero {
-    #hero-text {
-      position: absolute;
-      top: 65%;
-      left: 5%;
-  
+    #hero-text {  
       h1 {
         font-size: 2rem;
+        line-height: 1.8rem;
       }
 
       h3 {
@@ -406,27 +480,6 @@ section {
 
   #instagram {
     padding: 4rem .25rem;
-    align-items: center;
-
-    img#logo {
-      height: 40px;
-    }
-  
-    img#verified {
-      height: 15px
-    }
-
-    ul:first-of-type {
-      margin-top: 1rem;
-    }
-
-    ul:last-of-type {
-      margin-bottom: 3rem;
-    }
-
-    ul {
-      margin: 0;
-    }
 
     li {
       margin: .25rem;
