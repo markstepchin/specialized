@@ -169,9 +169,12 @@ header {
 @media only screen and (max-width: 1023px) {
   .top-header {
     font-size: .8rem;
+    padding-left: 1rem;
   }
 
   .bottom-header {
+    padding: 0 1rem;
+
     li {
       margin: 0 1rem;
   
