@@ -38,7 +38,7 @@ const LandingPage = () => (
     <section id='video'>
       <h2>The all new stuntjumper</h2>
       <div>
-        <iframe title='stuntjumper video' width="80%" height="90%" src="https://www.youtube.com/embed/yiNyUvYb7AM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title='stuntjumper video' width="80%" height="90%" src="https://www.youtube.com/embed/yiNyUvYb7AM" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </div>
     </section>
     <section id='instagram'>
