@@ -1,8 +1,8 @@
 $sidePadding: 4rem;
+$mobileSidePadding: 4rem;
 
 #listing-container {
   background-color: #f8f8f8;
-  padding-top: $topHeaderHeight + $bottomHeaderHeight;
   /* top | right | bottom | left */
   padding: $topHeaderHeight + $bottomHeaderHeight $sidePadding $sidePadding $sidePadding;
 }
@@ -19,7 +19,7 @@ $sidePadding: 4rem;
 
   #hero-text {
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 10%;
     transform: translate(0, -50%);
 
@@ -27,17 +27,75 @@ $sidePadding: 4rem;
     font-size: 6rem;
     font-weight: 400;
     text-transform: uppercase;
+    text-shadow: 1px 1px 10px rgb(58, 58, 58);
   }
 }
 
 #description {
-  margin: 4rem;
+  margin: 4rem 10rem;
 
   p {
+    margin: 0;
     font-size: 1.0625rem;
     line-height: 2.125rem;
     color: #5e5e5e;
-    margin: 0 6rem;
     letter-spacing: 1.25px;
+  }
+}
+
+/* Large tablet: 1023px - 1200px*/
+@media only screen and (max-width: 1200px) {
+  #description {
+    margin: 4rem 5rem;
+  }
+}
+
+/* Small tablet to large tablet: 767px - 1023px */
+@media only screen and (max-width: 1023px) {
+  #hero-img {  
+    #hero-text {
+      font-size: 4rem;
+    }
+  }
+
+  #description {
+    margin: 4rem 2rem;
+  }
+}
+
+/* small phones to small tablets: 480px - 767px */
+@media only screen and (max-width: 767px) {
+  #listing-container {
+    /* top | right | bottom | left */
+    padding: $topHeaderHeight + $bottomHeaderHeight-mobile $mobileSidePadding $mobileSidePadding $mobileSidePadding;
+  }
+
+  #hero-img {  
+    margin-top: $mobileSidePadding;
+
+    #hero-text {
+      left: 3%;
+      font-size: 3rem;
+    }
+  }
+
+  #description {
+    margin: 4rem 0;
+  }
+}
+
+/* small phones: 0 - 480px */
+@media only screen and (max-width: 480px) {
+  #listing-container {
+    /* top | right | bottom | left */
+    padding: $topHeaderHeight + $bottomHeaderHeight-mobile 1rem 1rem 1rem;
+  }
+
+  #hero-img {  
+    margin-top: 1rem;
+
+    #hero-text {
+      font-size: 2.5rem;
+    }
   }
 }
