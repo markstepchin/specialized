@@ -24,7 +24,7 @@ class Header extends React.Component {
           <button id='menu-button' onClick={this.onToggleClick}>
             <ion-icon name="menu"></ion-icon>
           </button>
-          <a className='logo' href='/#' />
+          <Link className='logo' to='/'/>
           <ul>
           <li><Link to='/shop/bikes'>Bikes</Link></li>
           <li><Link to='/shop/trail'>Trail</Link></li>
@@ -57,7 +57,7 @@ const ToolBar = ({ isOpen, onClick }) => (
         <li onClick={onClick}><Link to='/shop/trail'>Trail</Link></li>
         <li onClick={onClick}><Link to='/shop/downhill'>Downhill</Link></li>
         <li onClick={onClick}><Link to='/shop/s-works'>S-works</Link></li>
-        <li onClick={onClick}><Link to='/#'>inside specialized</Link></li>
+        <li onClick={onClick}><Link to='/'>inside specialized</Link></li>
       </ul>
     </div>
 );
