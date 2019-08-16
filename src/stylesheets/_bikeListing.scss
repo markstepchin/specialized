@@ -1,0 +1,43 @@
+$sidePadding: 4rem;
+
+#listing-container {
+  background-color: #f8f8f8;
+  padding-top: $topHeaderHeight + $bottomHeaderHeight;
+  /* top | right | bottom | left */
+  padding: $topHeaderHeight + $bottomHeaderHeight $sidePadding $sidePadding $sidePadding;
+}
+
+#hero-img {
+  margin-top: $sidePadding;
+  width: 100%;
+  position: relative;
+
+  img {
+    max-height:100%; 
+    max-width:100%;
+  }
+
+  #hero-text {
+    position: absolute;
+    top: 55%;
+    left: 10%;
+    transform: translate(0, -50%);
+
+    color: white;
+    font-size: 6rem;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
+
+#description {
+  margin: 4rem;
+
+  p {
+    font-size: 1.0625rem;
+    line-height: 2.125rem;
+    color: #5e5e5e;
+    margin: 0 6rem;
+    letter-spacing: 1.25px;
+  }
+}
