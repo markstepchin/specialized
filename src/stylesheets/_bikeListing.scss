@@ -11,10 +11,12 @@ $mobileSidePadding: 4rem;
   margin-top: $sidePadding;
   width: 100%;
   position: relative;
+  height: 50vh;
+  overflow: hidden;
 
   img {
-    max-height:100%; 
-    max-width:100%;
+    min-height:100%; 
+    min-width:100%;
   }
 
   #hero-text {

@@ -43,7 +43,7 @@ const BIKE_DATA = [
 				name: 'Fuse Expert 27.5',
 				price: '2,000.00',
 				partNumber: 'No.94159-0005',
-				image: require('../Assets/Images/PreviewCard/FuseExpert27.5.png'),
+				image: require('../Assets/Images/PreviewCard/FuseExpert27.5.jpeg'),
 				primaryColor: '#',
 				secondaryColor: '#',
 			},
