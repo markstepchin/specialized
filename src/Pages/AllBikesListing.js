@@ -1,20 +1,18 @@
 import React from 'react';
 import BikeListing from "./BikeListing";
 import BikeData from "./BikeData";
-import bikeHeroImage from "../Assets/Images/Downhill/DownHillHero.jpg";
+import bikeHeroImage from "../Assets/Images/Bikes/BikesHero.jpg";
 
-const data = [
-  BikeData[1]
-];
+const data = BikeData;
 
-const DownHillBikeListing = () => (
+const SworksBikeListing = () => (
   <BikeListing 
     data={data}
-    title='Downhill'>
+    title='Bikes'>
     <img 
       src={bikeHeroImage} 
       alt='bike cover'/>
   </BikeListing>
 );
 
-export default DownHillBikeListing;
+export default SworksBikeListing;

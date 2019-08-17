@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import LandingPage from "./Pages/LandingPage";
-import BikeListing from "./Pages/BikeListing";
+import AllBikesListing from "./Pages/AllBikesListing";
 import TrailBikeListing from "./Pages/TrailBikeListing";
 import DownhillBikeListing from "./Pages/DownhillBikeListing";
 import SworksBikeListing from "./Pages/SworksBikeListing";
@@ -19,7 +19,7 @@ function App() {
         <Header />
 
         <Route exact path='/' component={() => <LandingPage />}/>
-        <Route path='/shop/bikes' component={() => <BikeListing />}/>
+        <Route path='/shop/bikes' component={() => <AllBikesListing />}/>
         <Route path='/shop/trail' component={() => <TrailBikeListing />}/>
         <Route path='/shop/downhill' component={() => <DownhillBikeListing />}/>
         <Route path='/shop/s-works' component={() => <SworksBikeListing />}/>
