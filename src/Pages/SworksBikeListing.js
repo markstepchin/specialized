@@ -1,5 +1,5 @@
 import React from 'react';
-import BikeListing from "./BikeListing";
+import BikeListing from "../Layout/BikeListing";
 import BikeData from "./BikeData";
 import bikeHeroImage from "../Assets/Images/S-Works/SWorksHero.jpg";
 
