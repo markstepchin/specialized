@@ -13,3 +13,14 @@ $bottomHeaderHeight-mobile: 3.3rem;
 @import './stylesheets//bikeListing';
 @import './stylesheets/itemCard';
 @import './stylesheets/trailBikeListing';
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+
+#page-container {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html {
+  background-color: rgb(247,247,247);
+}

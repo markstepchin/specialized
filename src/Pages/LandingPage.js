@@ -3,7 +3,6 @@ import instaLogo from "../Assets/Images/Landing/IGLogo.png";
 import verifiedLink from "../Assets/Icons&Logos/IG/Verified.svg";
 
 const LandingPage = () => (
-  // <div id='page-container'>
   <>
     <div id='hero'>
       <div id='hero-text'>
@@ -60,7 +59,6 @@ const LandingPage = () => (
       </ul>
     </section>
   </>
-  // </div>
 );
 
 export default LandingPage;
