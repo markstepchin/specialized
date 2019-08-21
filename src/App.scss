@@ -1,6 +1,7 @@
 $textColor: rgb(18,18,18);
 $whiteTextColor: rgb(255,255,255);
 $redText: rgb(235, 47, 41);
+$hoverText: rgb(190, 38, 33);
 
 $topHeaderHeight: 2.25rem;
 $bottomHeaderHeight: 4.45rem;
@@ -13,6 +14,7 @@ $bottomHeaderHeight-mobile: 3.3rem;
 @import './stylesheets//bikeListing';
 @import './stylesheets/itemCard';
 @import './stylesheets/trailBikeListing';
+@import './stylesheets/gallery';
 @import "~react-image-gallery/styles/scss/image-gallery.scss";
 
 #page-container {

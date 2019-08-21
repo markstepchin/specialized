@@ -1,0 +1,50 @@
+.carousel {
+  position: relative;
+}
+
+#gallery-button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  top: 50%;
+  position: absolute;
+  transform: translate(0, -50%);
+
+  .slider {
+    position: relative;
+  }
+
+  .gallery-buttons {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: rgb(61, 61, 61);
+
+    &:hover {
+      color: $hoverText
+    }
+  }
+}
+
+.dot-group {
+  display: flex;
+  justify-content: center;
+}
+
+.gallery-dot {
+  height: 14px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(211, 211, 211);
+  margin: 10px 10px;
+
+  &.carousel__dot--selected {
+    background-color: rgb(61, 61, 61);
+  }
+
+  &:hover {
+    color: $hoverText
+  }
+}
+
