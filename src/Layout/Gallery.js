@@ -11,7 +11,7 @@ export default ({ images }) => (
   >
     <Slider className='slider'>
       {images.map((src, i) => (
-        <Slide index={i}>
+        <Slide index={i} key={i}>
           <Image src={src}/>
         </Slide>
       ))}
@@ -26,7 +26,7 @@ export default ({ images }) => (
     </div>
     <div className='dot-group'>
       <div>
-        {images.map((src, i) => <Dot slide={i} className='gallery-dot'/>)}
+        {images.map((src, i) => <Dot key={i} slide={i} className='gallery-dot'/>)}
       </div>  
     </div>
   </CarouselProvider>

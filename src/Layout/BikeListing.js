@@ -23,13 +23,13 @@ export const ListSection = ({ title, items }) => (
     <h2>{title}</h2>
     <div className='list-section'>
       {items.map(item => (
-        <ItemCard item={item} />
+        <ItemCard item={item} key={item.id}/>
       ))}
     </div>
   </div>
 );
 
-export const ItemCard = ({ item: { name, price, image, id } }) => (
+export const ItemCard = ({ item: { id, image, details: { name, price } } }) => (
   <Link className='item-card' to={`shop/${id}`}>
     <img src={image} alt='bike'/>
     <h3>{name}</h3>

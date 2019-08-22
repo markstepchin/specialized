@@ -10,10 +10,18 @@ section#product-description-container {
     margin: 0 2rem;
   }
 
-  p {
+  p, ul {
     color: #414141;
     font-weight: 300;
     line-height: 1.85rem;
+  }
+
+  ul {
+    font-size: .85rem;
+  }
+
+  li {
+    margin-bottom: 1.5rem;
   }
 
   button {
@@ -33,14 +41,6 @@ section#product-description-container {
       font-weight: 500;
     }
   }
-  
-  .bullet-points {
-    font-size: .85rem;
-
-    li {
-      margin-bottom: 1.5rem;
-    }
-  }
 }
 
 /* Large tablet: 1023px - 1200px*/
@@ -56,10 +56,8 @@ section#product-description-container {
 /* small phones to small tablets: 480px - 767px */
 @media only screen and (max-width: 767px) {
   .product-description-container {    
-    .bullet-points {
-      li {
-        margin-bottom: 1rem;
-      }
+    li {
+      margin-bottom: 1rem;
     }
   }
   
