@@ -72,7 +72,7 @@ section#display-footer-container {
 
 /* Small tablet to large tablet: 767px - 1023px */
 @media only screen and (max-width: 1023px) {
-  .display-footer-container {
+  #display-footer-container {
     .section-3 {
       flex-direction: column;
     }
@@ -81,12 +81,15 @@ section#display-footer-container {
 
 /* small phones to small tablets: 480px - 767px */
 @media only screen and (max-width: 767px) {
-  .display-footer-container {
+  section#display-footer-container {
     flex-direction: column;
 
     .section-3 {
       button {
-        margin: .25rem 0;
+        height: 2.5rem;
+  
+        font-size: .8rem;
+        letter-spacing: -.25px;
       }
     }
   }
