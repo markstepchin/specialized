@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import instaLogo from "../Assets/Images/Landing/IGLogo.png";
 import verifiedLink from "../Assets/Icons&Logos/IG/Verified.svg";
 
@@ -19,9 +20,9 @@ const LandingPage = () => (
     <section id='categories'>
       <h3>explore our bikes</h3>
       <ul>
-        <li><a href='#hi'><div id='trail-bike-link'/><span>Trail</span></a></li>
-        <li><a href='#hey'><div id='downhill-bike-link'/><span>Downhill</span></a></li>
-        <li><a href='#wut'><div id='sworks-bike-link'/><span>s-works</span></a></li>
+        <li><Link to='shop-trail'><div id='trail-bike-link'/><span>Trail</span></Link></li>
+        <li><Link to='shop-downhill'><div id='downhill-bike-link'/><span>Downhill</span></Link></li>
+        <li><Link to='shop-sworks'><div id='sworks-bike-link'/><span>s-works</span></Link></li>
       </ul>
     </section>
     <section id='large-image'>

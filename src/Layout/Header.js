@@ -53,10 +53,10 @@ const ToolBar = ({ isOpen, onClick }) => (
         <a href='/#'>Inside specialized</a>
       </div>
       <ul>
-        <li onClick={onClick}><Link to='/shop/bikes'>Bikes</Link></li>
-        <li onClick={onClick}><Link to='/shop/trail'>Trail</Link></li>
-        <li onClick={onClick}><Link to='/shop/downhill'>Downhill</Link></li>
-        <li onClick={onClick}><Link to='/shop/s-works'>S-works</Link></li>
+        <li onClick={onClick}><Link to='/shop-bikes'>Bikes</Link></li>
+        <li onClick={onClick}><Link to='/shop-trail'>Trail</Link></li>
+        <li onClick={onClick}><Link to='/shop-downhill'>Downhill</Link></li>
+        <li onClick={onClick}><Link to='/shop-s-works'>S-works</Link></li>
         <li onClick={onClick}><Link to='/'>inside specialized</Link></li>
       </ul>
     </div>
