@@ -1,7 +1,8 @@
-.display-footer-container {
+section#display-footer-container {
   display: flex;
   justify-content: space-between;
   margin: 0 2rem;
+  padding: 2rem 0;
 
   .section-1 {
     flex-grow: 2;

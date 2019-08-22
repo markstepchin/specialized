@@ -1,7 +1,9 @@
-.product-description-container {
+section#product-description-container {
   background-color: rgb(241,241,241);
   display: flex;
   justify-content: center;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
 
   .container {
     width: 800px;

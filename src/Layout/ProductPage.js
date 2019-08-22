@@ -180,7 +180,7 @@ const ProductPage = () => (
 );
 
 const DisplayFooter = ({ details: { title, price, partNumber } }) => (
-  <section className='display-footer-container'>
+  <section id='display-footer-container'>
     <div className='section-1'>
       <h2 className='display-title'>
         {title}
@@ -207,7 +207,7 @@ const Description = ({ description: { intro, description, list } }) => {
   const [more = false, setMore] = useState(0);
 
   return (
-    <section className='product-description-container'>
+    <section id='product-description-container'>
       <div className='container'>
         <p>
           {intro}
