@@ -7,6 +7,7 @@ import TrailBikeListing from "./Pages/TrailBikeListing";
 import DownhillBikeListing from "./Pages/DownhillBikeListing";
 import SworksBikeListing from "./Pages/SworksBikeListing";
 import ProductPage from "./Layout/ProductPage";
+import Cart from "./Pages/Cart";
 import Header from "./Layout/Header";
 import Footer from "./Layout/Footer";
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/shop-downhill' component={() => <DownhillBikeListing />}/>
           <Route path='/shop-sworks' component={() => <SworksBikeListing />}/>
           <Route path='/shop/:id' component={() => <ProductPage />}/>
+          <Route path='/cart' component={() => <Cart />} />
         </div>
         <Footer />
       </Router>
