@@ -29,14 +29,152 @@ const description = {
     "With three different compression adjustments—open/pedal/lock—incredible damping performance, and our Rx Trail Tune, the RockShox Deluxe RT3 perfectly complements the Stumpjumper.",
     "RockShox's Pike is known for its trail performance, and the RC found here has stiff stanchions, a Charger damper, and plenty of sensitivity."
   ]
-}
+};
+
+const specs = [
+  {
+    title: 'drivetrain',
+    items: [
+      {
+        spec: 'BOTTOM BRACKET',
+        item: 'SRAM GXP'
+      },
+      {
+        spec: 'CHAIN',
+        item: 'SRAM GX Eagle, 12-speed'
+      },
+      {
+        spec: 'CRANKSET',
+        item: '	Truvativ Descendant, aluminum, Boost™ 148, 170mm crankarm, 24mm spindle'
+      },
+      {
+        spec: 'SHIFT LEVERS',
+        item: '	SRAM GX Eagle, trigger, 12-speed'
+      },
+      {
+        spec: 'CASSETTE',
+        item: '	SRAM GX Eagle, 12-speed, 10-50t'
+      },
+      {
+        spec: 'CHAINRINGS',
+        item: '30T'
+      },
+    ]
+  },
+  {
+    title: 'suspension',
+    items: [
+      {
+        spec: 'FORK',
+        item: 'RockShox Pike RC, DebonAir, rebound/low-speed compression adjust, tapered steerer, 51mm offset, 15mm Maxle® Stealth thru-axle, 15x110mm Boost™, 150mm of travel'
+      },
+      {
+        spec: 'REAR SHOCK',
+        item: '	RockShox Deluxe RT3, Rx Trail Tune, rebound & 3-position compression adjust, 210x50mm'
+      }
+    ]
+  },
+  {
+    title: 'cockpit',
+    items: [
+      {
+        spec: 'SADDLE',
+        item: '	Body Geometry Phenom Comp, hollow Cr-Mo rails, 143mm'
+      },
+      {
+        spec: 'SEAT BINDER',
+        item: 'Specialized bolt-type, alloy, 38.6mm'
+      },
+      {
+        spec: 'SEAT POST',
+        item: '	Command Post IRcc, 16-position micro-height adjustable, two-bolt head, bottom mount cable routing, remote SRL lever, 34.9mm, S: 130mm, M/L/XL: 160mm of travel'
+      },
+      {
+        spec: 'HANDLEBARS',
+        item: '	Specialized Trail, 7050 alloy, 8-degree backsweep, 6-degree upsweep, 27mm rise, 780mm, 31.8mm clamp'
+      },
+      {
+        spec: 'STEM',
+        item: '	Specialized Trail, forged alloy, 4-bolt, 5mm rise'
+      },
+      {
+        spec: 'GRIPS',
+        item: '	Specialized Sip grip, half-waffle, S/M: regular thickness, L/XL: XL thickness'
+      }
+    ]
+  },
+  {
+    title: 'wheels & tires',
+    items: [
+      {
+        spec: 'FRONT HUB',
+        item: '	Specialized, sealed cartridge bearings, 15x110mm spacing, 28h'
+      },
+      {
+        spec: 'REAR HUB',
+        item: '	Specialized, sealed cartridge bearings, 12x148mm thru-axle, 28h'
+      },
+      {
+        spec: 'INNER TUBES',
+        item: 'Standard, Presta valve'
+      },
+      {
+        spec: 'SPOKES',
+        item: '	DT Swiss Industry'
+      },
+      {
+        spec: 'RIMS',
+        item: 'Roval Traverse Carbon 29, hookless carbon, 30mm inner width, hand-built, tubeless ready, 28h'
+      },
+      {
+        spec: 'FRONT TIRE',
+        item: 'Butcher, GRID casing, GRIPTON® compound, 2Bliss Ready, 29x2.6"'
+      },
+      {
+        spec: 'REAR TIRE',
+        item: '	Purgatory, GRID casing, GRIPTON® compound, 2Bliss ready, 29 x2.6"'
+      },
+    ]
+  },
+  {
+    title: 'brakes',
+    items: [
+      {
+        spec: 'FRONT BRAKE',
+        item: '	SRAM Guide R, hydraulic disc, organic pads, Guide S4 4-piston caliper, 200mm'
+      },
+      {
+        spec: 'REAR BRAKE',
+        item: 'SRAM Guide R, hydraulic disc, organic pads, Guide S4 4-piston caliper, 180mm'
+      }
+    ]
+  },
+  {
+    title: 'accessories',
+    items: [
+      {
+        spec: 'PEDALS',
+        item: '	Specialized Dirt'
+      }
+    ]
+  },
+  {
+    title: 'frameset',
+    items: [
+      {
+        spec: 'FRAME',
+        item: 'FACT 11m, full carbon chassis and rear-end, asymmetrical design, 29 Trail Geometry, SWAT™ Door integration, threaded BB, fully enclosed internal cable routing, 12x148mm dropouts, sealed cartridge bearing pivots, replaceable derailleur hanger, 140mm of travel'
+      }
+    ]
+  }
+]
 
 const ProductPage = () => (
   <div style={{ paddingTop: '10rem' }}>
     <Gallery images={images}/>
     <DisplayFooter details={details}/>
     <Description description={description}/>
-    <TechnicalSpecs />
+    <TechnicalSpecs specs={specs}/>
     <Reviews />
   </div>
 );
@@ -95,15 +233,30 @@ const Description = ({ description: { intro, description, list } }) => {
   );
 }
 
-const TechnicalSpecs = () => (
-  <div>
-    <button>Manual Downloads</button>
-    <div>
-      <h3>Technical Specifications</h3>
-      <div>part names</div>
-      <div>specific names</div>
+const TechnicalSpecs = ({ specs }) => (
+  <section id='specs-manual-container'>
+    <div className='container'>
+      <button>Manual Downloads</button>
+      <div id='specs-container'>
+        <h3>Technical Specifications</h3>
+
+        <div className='spec-section'>
+          {specs.map(section => (
+            <>
+              <h4>{section.title}</h4>
+              {section.items.map(item => (
+                <div className='individual-spec'>
+                  <h5>{item.spec}</h5>
+                  <p>{item.item}</p>
+                </div>
+              ))}
+            </>
+          ))}
+        </div>
+
+      </div>
     </div>
-  </div>
+  </section>
 );
 
 const Reviews = () => (
