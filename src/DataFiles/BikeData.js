@@ -182,15 +182,15 @@ export const bikes = [
 export default [
 	{
 		id: generateId(),
-		title: 'Trail',
-		routeName: 'shop/trail',
-		items: bikes.slice(0,5)
-	},
-	{
-		id: generateId(),
 		title: 'DownHill',
 		routeName: 'shop/downhill',
 		items: bikes.slice(5,8)
+	},
+	{
+		id: generateId(),
+		title: 'Trail',
+		routeName: 'shop/trail',
+		items: bikes.slice(0,5)
 	},
 	{
 		id: generateId(),
