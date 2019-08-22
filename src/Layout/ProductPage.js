@@ -260,11 +260,17 @@ const TechnicalSpecs = ({ specs }) => (
 );
 
 const Reviews = () => (
-  <>
+  <section id='review-container'>
     <h1>Reviews</h1>
-    <div>container with stars</div>
-    <button>Write a review</button>
-  </>
+    <div className='star-container'>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+    </div>
+    <button>Be the first to write a review!</button>
+  </section>
 );
 
 export default ProductPage;
