@@ -19,11 +19,11 @@ const ProductPage = ({ match: { params: { id } } }) => {
   );
 }
 
-const DisplayFooter = ({ details: { title, price, partNumber } }) => (
+const DisplayFooter = ({ details: { name, price, partNumber } }) => (
   <section id='display-footer-container'>
     <div className='section-1'>
       <h2 className='display-title'>
-        {title}
+        {name}
       </h2>
       <h3 className='display-price'>
         ${price}
