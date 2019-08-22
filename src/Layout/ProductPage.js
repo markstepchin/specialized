@@ -170,7 +170,7 @@ const specs = [
 ]
 
 const ProductPage = () => (
-  <div style={{ paddingTop: '10rem' }}>
+  <div id='product-page-container'>
     <Gallery images={images}/>
     <DisplayFooter details={details}/>
     <Description description={description}/>
