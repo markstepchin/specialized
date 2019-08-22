@@ -1,4 +1,4 @@
-const BIKE_DATA = [
+export default [
 	{
 		id: 1,
 		title: 'Trail',
@@ -17,8 +17,6 @@ const BIKE_DATA = [
 				price: '5,000.00',
 				partNumber: 'No.94159-0002',
 				image: require('../Assets/Images/PreviewCard/StumpJumperExpert29.jpeg'),
-				primaryColor: '#',
-				secondaryColor: '#',
 			},
 			{
 				id: 3,
@@ -26,8 +24,6 @@ const BIKE_DATA = [
 				price: '5,000.00',
 				partNumber: 'No.94159-0003',
 				image: require('../Assets/Images/PreviewCard/StumpJumperExpert27.5.jpeg'),
-				primaryColor: '#',
-				secondaryColor: '#',
 			},
 			{
 				id: 4,
@@ -35,8 +31,6 @@ const BIKE_DATA = [
 				price: '2,100.00',
 				partNumber: 'No.94159-0004',
 				image: require('../Assets/Images/PreviewCard/FuseExpert29.jpeg'),
-				primaryColor: '#',
-				secondaryColor: '#',
 			},
 			{
 				id: 5,
@@ -44,8 +38,6 @@ const BIKE_DATA = [
 				price: '2,000.00',
 				partNumber: 'No.94159-0005',
 				image: require('../Assets/Images/PreviewCard/FuseExpert27.5.jpeg'),
-				primaryColor: '#',
-				secondaryColor: '#',
 			},
 		]
 	},
@@ -60,8 +52,6 @@ const BIKE_DATA = [
 				price: '6,500.00',
 				partNumber: 'No.94159-0006',
 				image: require('../Assets/Images/PreviewCard/DemoRacer29.jpeg'),
-				primaryColor: '#',
-				secondaryColor: '#',
 			},
 			{
 				id: 7,
@@ -69,8 +59,6 @@ const BIKE_DATA = [
 				price: '6,300.00',
 				partNumber: 'No.94159-0007',
 				image: require('../Assets/Images/PreviewCard/DemoExpert29.jpeg'),
-				primaryColor: '#',
-				secondaryColor: '#',
 			},
 			{
 				id: 8,
@@ -78,8 +66,6 @@ const BIKE_DATA = [
 				price: '3,400.00',
 				partNumber: 'No.94159-0008',
 				image: require('../Assets/Images/PreviewCard/DemoAlloy27.5.jpeg'),
-				primaryColor: '#',
-				secondaryColor: '#',
 			},
 		]
 	},
@@ -94,8 +80,6 @@ const BIKE_DATA = [
 				price: '9,500.00',
 				partNumber: 'No.94159-0010',
 				image: require('../Assets/Images/PreviewCard/EpicEvo.jpeg'),
-				primaryColor: '#',
-				secondaryColor: '#',
 			},
 			{
 				id: 11,
@@ -103,8 +87,6 @@ const BIKE_DATA = [
 				price: '9,520.00',
 				partNumber: 'No.94159-0011',
 				image: require('../Assets/Images/PreviewCard/StumpJumper29.jpeg'),
-				primaryColor: '#',
-				secondaryColor: '#',
 			},
 			{
 				id: 12,
@@ -112,8 +94,6 @@ const BIKE_DATA = [
 				price: '9,520.00',
 				partNumber: 'No.94159-0012',
 				image: require('../Assets/Images/PreviewCard/StumpJumper27.5.jpeg'),
-				primaryColor: '#',
-				secondaryColor: '#',
 			},
 			{
 				id: 13,
@@ -121,11 +101,7 @@ const BIKE_DATA = [
 				price: '4,000.00',
 				partNumber: 'No.94159-0013',
 				image: require('../Assets/Images/PreviewCard/Demo8Frame.jpg'),
-				primaryColor: '#',
-				secondaryColor: '#',
 			},
 		]
 	}
-]
-
-export default BIKE_DATA;
+];
