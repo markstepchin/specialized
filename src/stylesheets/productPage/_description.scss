@@ -1,0 +1,69 @@
+.product-description-container {
+  background-color: rgb(241,241,241);
+  display: flex;
+  justify-content: center;
+
+  .container {
+    width: 800px;
+    margin: 0 2rem;
+  }
+
+  p {
+    color: #414141;
+    font-weight: 300;
+    line-height: 1.85rem;
+  }
+
+  button {
+    margin: 2rem 0;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    text-transform: uppercase;
+    font-size: .9rem;
+    font-weight: 300;
+    letter-spacing: -.75px;
+
+    &:hover {
+      color: $redText;
+      font-weight: 500;
+    }
+  }
+  
+  .bullet-points {
+    font-size: .85rem;
+
+    li {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+/* Large tablet: 1023px - 1200px*/
+@media only screen and (max-width: 1200px) {
+
+}
+
+/* Small tablet to large tablet: 767px - 1023px */
+@media only screen and (max-width: 1023px) {
+
+}
+
+/* small phones to small tablets: 480px - 767px */
+@media only screen and (max-width: 767px) {
+  .product-description-container {    
+    .bullet-points {
+      li {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  
+}
+
+/* small phones: 0 - 480px */
+@media only screen and (max-width: 480px) {
+
+}
