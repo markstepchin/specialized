@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; 
 
 const BikeListing = ({ data, title, description, children }) => (
   <div id='listing-container'>
@@ -28,12 +29,12 @@ export const ListSection = ({ title, items }) => (
   </div>
 );
 
-export const ItemCard = ({ item: { name, price, image } }) => (
-  <div className='item-card'>
+export const ItemCard = ({ item: { name, price, image, id } }) => (
+  <Link className='item-card' to={`shop/${id}`}>
     <img src={image} alt='bike'/>
     <h3>{name}</h3>
     <p>${price}</p>
-  </div>
+  </Link>
 )
 
 export default BikeListing;

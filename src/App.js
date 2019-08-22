@@ -20,11 +20,11 @@ function App() {
         <Header />
         <div id='page-container'>
           <Route exact path='/' component={() => <LandingPage />}/>
-          <Route path='/shop/bikes' component={() => <AllBikesListing />}/>
-          <Route path='/shop/trail' component={() => <TrailBikeListing />}/>
-          <Route path='/shop/downhill' component={() => <DownhillBikeListing />}/>
-          <Route path='/shop/s-works' component={() => <SworksBikeListing />}/>
-          <Route path='/product' component={() => <ProductPage />}/>
+          <Route path='/shop-bikes' component={() => <AllBikesListing />}/>
+          <Route path='/shop-trail' component={() => <TrailBikeListing />}/>
+          <Route path='/shop-downhill' component={() => <DownhillBikeListing />}/>
+          <Route path='/shop-sworks' component={() => <SworksBikeListing />}/>
+          <Route path='/shop/:id' component={() => <ProductPage />}/>
         </div>
         <Footer />
       </Router>
