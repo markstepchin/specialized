@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CartPreview from "../Layout/CartPreview";
 
 class Header extends React.Component {
   state = {
@@ -21,6 +22,7 @@ class Header extends React.Component {
           </div>
         </div>
         <div className='bottom-header'>
+          
           <button id='menu-button' onClick={this.onToggleClick}>
             <ion-icon name="menu"></ion-icon>
           </button>
@@ -36,6 +38,7 @@ class Header extends React.Component {
             <span className='search-icon'/>
             <span className='cart-icon'/>
           </div>
+          <CartPreview />
         </div>
       </header>
     );

@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const Cart = () => (
   <section id='cart'>
     <h1 className='cart-col'>Shopping cart</h1>
-    {/* <EmptyCartMessage /> */}
-    <CartContents />
+    <EmptyCartMessage />
+    {/* <CartContents /> */}
     <CartFooter />
   </section>
 );
@@ -105,7 +105,7 @@ const EmptyCartMessage = () => (
 )
 
 const CartFooter = () => (
-  <div id='cart-footer'>
+  <div id='cart-footer' className='cart-col'>
     <div className='cart-footer-col'>
       <h3>Contact Us</h3>
       <p>8:00am - 6:00pm MST, Monday-Friday</p>

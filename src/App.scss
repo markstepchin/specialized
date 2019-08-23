@@ -2,6 +2,7 @@ $textColor: rgb(18,18,18);
 $whiteTextColor: rgb(255,255,255);
 $redText: rgb(235, 47, 41);
 $hoverText: rgb(190, 38, 33);
+$backgroundRed: #ed1c24;
 
 $topHeaderHeight: 2.25rem;
 $bottomHeaderHeight: 4.45rem;
@@ -24,6 +25,7 @@ $bottomHeaderHeight-mobile: 3.3rem;
 @import './stylesheets/cart';
 @import './stylesheets/cart/cartListing';
 @import './stylesheets/cart/cartSummary';
+@import './stylesheets/cart/cartPreview';
 
 #page-container {
   max-width: 1920px;
