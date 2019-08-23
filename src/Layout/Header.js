@@ -35,10 +35,10 @@ class Header extends React.Component {
           <li><Link to='/#'>inside specialized</Link></li>
           </ul>
           <div>
-            <span className='search-icon'/>
-            <span className='cart-icon'/>
+            {/* <span className='search-icon'/> */}
+            <CartPreview />
           </div>
-          <CartPreview />
+          
         </div>
       </header>
     );

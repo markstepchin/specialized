@@ -23,7 +23,7 @@ const CartListing = () => (
       <div className='col'>
         <h3>details</h3>
         <div className='details-container'>
-          <img />
+          <img alt=''/>
           <div style={{ padding: '0 2rem' }}>
             <h4>Fuse 27.5</h4>
             <span>Part No. 96020-7001</span>  
