@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 export default () => (
   <div id='cart-preview'>
@@ -20,6 +21,6 @@ export default () => (
       </div>
       <span className='taxes'>Taxes are calculated at checkout</span>
     </div>
-    <button className='checkout-button'>view cart and checkout</button>
+    <Link to='/cart' className='checkout-button'>view cart and checkout</Link>
   </div>
 );

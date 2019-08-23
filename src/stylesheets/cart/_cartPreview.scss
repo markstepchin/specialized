@@ -50,7 +50,6 @@
   }
 
   .checkout-button {
-    width: 100%;
     background-color: $backgroundRed;
     transition: background-color .5s;
     &:hover {
@@ -59,15 +58,14 @@
     }
     border: none;
 
+    text-align: center;
     text-transform: uppercase;
     color: $whiteTextColor;
     font-size: 1.25rem;
     font-weight: 300;
-    letter-spacing: -1px;
 
     padding: 1.25rem;
   }
-
 }
 
 #preview-item-listing {
