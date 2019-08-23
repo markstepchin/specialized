@@ -22,6 +22,8 @@ $bottomHeaderHeight-mobile: 3.3rem;
 @import "~react-image-gallery/styles/scss/image-gallery.scss";
 @import './stylesheets//productPage/reviews';
 @import './stylesheets/cart';
+@import './stylesheets/cart/cartListing';
+@import './stylesheets/cart/cartSummary';
 
 #page-container {
   max-width: 1920px;

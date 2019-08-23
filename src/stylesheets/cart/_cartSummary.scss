@@ -1,0 +1,57 @@
+#cart-summary {
+  ul {
+    list-style: none;
+    padding: 2rem;
+    background-color: #f1f1f1;
+    margin: 0;
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    height: 3rem;
+  }
+
+  .bold {
+    text-transform: uppercase;
+    letter-spacing: -.25px;
+    font-weight: 600;
+    font-size: .9rem;
+  }
+
+  .non-bold {
+    text-transform: capitalize;
+    letter-spacing: -.25px;
+    font-weight: 400;
+    font-size: .7rem;
+    line-height: 1.35rem;
+  }
+
+  .border-bottom {
+    border-bottom: .5px #d6d6d6 solid;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Large tablet: 1023px - 1200px*/
+@media only screen and (max-width: 1200px) {
+  
+}
+
+/* Small tablet to large tablet: 767px - 1023px */
+@media only screen and (max-width: 1023px) {
+  
+}
+
+/* small phones to small tablets: 480px - 767px */
+@media only screen and (max-width: 767px) {
+  #cart-summary {
+    margin-top: 3rem;
+    width: 100%;
+  }
+}
+
+/* small phones: 0 - 480px */
+@media only screen and (max-width: 480px) {
+
+}
