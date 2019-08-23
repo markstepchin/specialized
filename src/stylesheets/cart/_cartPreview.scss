@@ -107,10 +107,16 @@
 
 /* small phones to small tablets: 480px - 767px */
 @media only screen and (max-width: 767px) {
-
+  #cart-preview {
+    margin-right: 1rem;
+    width: calc(100% - 2rem);
+  }
 }
 
 /* small phones: 0 - 480px */
 @media only screen and (max-width: 480px) {
-
+  #cart-preview {
+    margin-right: .5rem;
+    width: calc(100% - 1rem);
+  }
 }
