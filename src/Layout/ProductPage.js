@@ -3,6 +3,7 @@ import { description, specs } from "../DataFiles/ProductData";
 import Gallery from "./Gallery";
 import { withRouter } from "react-router-dom"; 
 import { bikes } from "../DataFiles/BikeData";
+import { CartContext } from "../CartContext";
 
 const ProductPage = ({ match: { params: { id } } }) => {
   const bike = bikes.find(b => b.id === id)  
@@ -11,7 +12,7 @@ const ProductPage = ({ match: { params: { id } } }) => {
   return (
     <div id='product-page-container'>
       <Gallery images={images}/>
-      <DisplayFooter details={details}/>
+      <DisplayFooter details={details} id={id}/>
       <Description description={description}/>
       <TechnicalSpecs specs={specs}/>
       <Reviews />
@@ -19,28 +20,35 @@ const ProductPage = ({ match: { params: { id } } }) => {
   );
 }
 
-const DisplayFooter = ({ details: { name, price, partNumber } }) => (
-  <section id='display-footer-container'>
-    <div className='section-1'>
-      <h2 className='display-title'>
-        {name}
-      </h2>
-      <h3 className='display-price'>
-        ${price}
-      </h3>
-      <p className='display-partNumber'>
-        Part No.{' '}{partNumber}
-      </p>
-    </div>
+const DisplayFooter = ({ id, details: { name, price, partNumber } }) => (
+  <CartContext>
+    {({addItem}) => (
+      <section id='display-footer-container'>
+        <div className='section-1'>
+          <h2 className='display-title'>
+            {name}
+          </h2>
+          <h3 className='display-price'>
+            ${price}
+          </h3>
+          <p className='display-partNumber'>
+            Part No.{' '}{partNumber}
+          </p>
+        </div>
 
-    <span className='in-stock'>In Stock</span>
+        <span className='in-stock'>In Stock</span>
 
-    <div className='section-3'>
-      <button>add to cart</button>
-      <button>tune my suspension</button>
-      <button>find nearby</button>
-    </div>
-  </section>
+        <div className='section-3'>
+          <button onClick={() => addItem(id)}>
+            add to cart
+          </button>
+          <button>tune my suspension</button>
+          <button>find nearby</button>
+        </div>
+      </section>
+    )}
+  </CartContext>
+  
 );
 
 const Description = ({ description: { intro, description, list } }) => {
