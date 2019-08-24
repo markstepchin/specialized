@@ -10,14 +10,14 @@ import ProductPage from "./Layout/ProductPage";
 import Cart from "./Pages/Cart";
 import Header from "./Layout/Header";
 import Footer from "./Layout/Footer";
+import CartContainer from './CartContext';
 
 import './App.scss';
 
-
 function App() {
   return (
-    <>
-      <Router>
+    <Router>
+      <CartContainer>
         <Header />
         <div id='page-container'>
           <Route exact path='/' component={() => <LandingPage />}/>
@@ -29,8 +29,8 @@ function App() {
           <Route path='/cart' component={() => <Cart />} />
         </div>
         <Footer />
-      </Router>
-    </>
+      </CartContainer>
+    </Router>
   );
 }
 
