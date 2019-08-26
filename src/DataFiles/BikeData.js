@@ -6,7 +6,7 @@ export const bikes = [
 		id: generateId(),
 		details: {
 			name: 'Stumpjumper Pro 29',
-			price: '6,300.00',
+			price: 6300,
 			partNumber: 'No.94159-0001',
 		},
 		image: require('../Assets/Images/PreviewCard/StumpJumperPro29.jpeg'),
@@ -18,7 +18,7 @@ export const bikes = [
 		id: generateId(),
 		details: {
 			name: 'StumpJumper Expert 29',
-			price: '5,000.00',
+			price: 5000,
 			partNumber: 'No.94159-0002',
 		},
 		image: require('../Assets/Images/PreviewCard/StumpJumperExpert29.jpeg'),
@@ -33,7 +33,7 @@ export const bikes = [
 		id: generateId(),
 		details: {
 			name: 'StumpJumper Expert 27.5',
-			price: '5,000.00',
+			price: 5000,
 			partNumber: 'No.94159-0003',
 		},
 		image: require('../Assets/Images/PreviewCard/StumpJumperExpert27.5.jpeg'),
@@ -50,7 +50,7 @@ export const bikes = [
 		id: generateId(),
 		details: {
 			name: 'Fuse Expert 29',
-			price: '2,100.00',
+			price: 2100,
 			partNumber: 'No.94159-0004',
 		},
 		image: require('../Assets/Images/PreviewCard/FuseExpert29.jpeg'),
@@ -64,7 +64,7 @@ export const bikes = [
 		id: generateId(),
 		details: {
 			name: 'Fuse Expert 27.5',
-			price: '2,000.00',
+			price: 2000,
 			partNumber: 'No.94159-0005',
 		},
 		image: require('../Assets/Images/PreviewCard/FuseExpert27.5.jpeg'),
@@ -76,7 +76,7 @@ export const bikes = [
 		id: generateId(),
 		details: {
 			name: 'Demo Racer 29',
-			price: '6,500.00',
+			price: 6500,
 			partNumber: 'No.94159-0006',
 		},	
 		image: require('../Assets/Images/PreviewCard/DemoRacer29.jpeg'),
@@ -93,7 +93,7 @@ export const bikes = [
 		id: generateId(),
 		details: {
 			name: 'Demo Expert 29',
-			price: '6,300.00',
+			price: 6300,
 			partNumber: 'No.94159-0007',
 		},
 		image: require('../Assets/Images/PreviewCard/DemoExpert29.jpeg'),
@@ -111,7 +111,7 @@ export const bikes = [
 		id: generateId(),
 		details: {
 			name: 'Demo Alloy 27.5',
-			price: '3,400.00',
+			price: 3400,
 			partNumber: 'No.94159-0008',
 		},
 		image: require('../Assets/Images/PreviewCard/DemoAlloy27.5.jpeg'),
@@ -127,7 +127,7 @@ export const bikes = [
 		id: generateId(),
 		details: {
 			name: 'S-Works Epic EVO',
-			price: '9,500.00',
+			price: 9500,
 			partNumber: 'No.94159-0010',
 		},
 		image: require('../Assets/Images/PreviewCard/EpicEvo.jpeg'),
@@ -144,7 +144,7 @@ export const bikes = [
 		id: generateId(),
 		details: {
 			name: 'S-Works StumpJumper 29',
-			price: '9,520.00',
+			price: 9520,
 			partNumber: 'No.94159-0011',
 		},
 		image: require('../Assets/Images/PreviewCard/StumpJumper29.jpeg'),
@@ -156,7 +156,7 @@ export const bikes = [
 		id: generateId(),
 		details: {
 			name: 'S-Works StumpJumper 27.5',
-			price: '9,520.00',
+			price: 9520,
 			partNumber: 'No.94159-0012',
 		},
 		image: require('../Assets/Images/PreviewCard/StumpJumper27.5.jpeg'),
@@ -168,7 +168,7 @@ export const bikes = [
 		id: generateId(),
 		details: {
 			name: 'S-Works Demo 8 Frame',
-			price: '4,000.00',
+			price: 4000,
 			partNumber: 'No.94159-0013',
 		},
 		image: require('../Assets/Images/PreviewCard/Demo8Frame.jpg'),
