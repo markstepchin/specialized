@@ -1,98 +1,117 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import { CartContext } from '../CartContext';
+import { getBikeList } from '../utils/general';
 
-const Cart = () => (
-  <section id='cart'>
-    <h1 className='cart-col'>Shopping cart</h1>
-    <EmptyCartMessage />
-    {/* <CartContents /> */}
-    <CartFooter />
-  </section>
-);
+class Cart extends React.Component {
+  render() {
+    const { items, removeItem } = this.context;
+    const bikeList = getBikeList(items);
 
-const CartContents = () => (
+    return (
+      <section id='cart'>
+        <h1 className='cart-col'>Shopping cart</h1>
+        {bikeList.length > 0 ? <CartContents bikeList={bikeList} removeItem={removeItem}/> : <EmptyCartMessage />}
+        <CartFooter />
+      </section>
+    )
+  }
+}
+
+Cart.contextType = CartContext;
+
+const CartContents = ({ bikeList, removeItem }) => (
   <div id='cart-contents'>
-    <CartListing />
-    <CartSummary />
+    <CartListing bikeList={bikeList} removeItem={removeItem}/>
+    <CartSummary bikeList={bikeList}/>
   </div>
 );
 
-const CartListing = () => (
+const CartListing = ({ bikeList, removeItem }) => (
   <div className='cart-col' style={{ flexGrow: 2 }}>
-    <div id='cart-listing'>
-      <div className='col'>
-        <h3>details</h3>
-        <div className='details-container'>
-          <img alt=''/>
-          <div style={{ padding: '0 2rem' }}>
-            <h4>Fuse 27.5</h4>
-            <span>Part No. 96020-7001</span>  
-            <h5>In Stock</h5> 
+    {bikeList.map(bike => (
+      <div id='cart-listing'>
+        <div className='col'>
+          <h3>details</h3>
+          <div className='details-container'>
+            <img src={bike.image} alt='product'/>
+            <div style={{ padding: '0 2rem' }}>
+              <h4>{bike.details.name}</h4>
+              <span>Part No. {bike.details.partNumber}</span>  
+              <h5>In Stock</h5> 
+            </div>
+          </div>
+        </div>
+    
+        <div className='other-details-container cart-col'>
+          <div>
+            <h3>price</h3>
+            <div>
+              <span className='price'>${bike.details.price}</span>
+            </div>
+          </div>
+    
+          <div>
+            <h3>quantity</h3>
+            <div>
+              <button style={{ marginRight: '1.25rem' }}>-</button>
+              <span className='quantity'>{bike.quantity}</span>
+              <button  style={{ marginLeft: '1.25rem' }}>+</button>
+            </div>
+            <div>
+              <button id='remove-from-cart' onClick={() => removeItem(bike.id)}>remove</button>
+            </div>
+          </div>
+    
+          <div>
+            <h3>total</h3>
+            <div>
+              <span className='price'>${bike.details.price * bike.quantity}</span>
+            </div>
           </div>
         </div>
       </div>
+    ))}
+    
+  </div>
+);
 
-      <div className='other-details-container cart-col'>
-        <div>
-          <h3>price</h3>
-          <div>
-            <span className='price'>$1,200.00</span>
-          </div>
-        </div>
+const CartSummary = ({ bikeList }) => {
+  const subtotal = bikeList.reduce((acc, curr) => acc + curr.details.price * curr.quantity, 0);
+  const tax = parseFloat(subtotal * .087).toFixed(2);
+  //rounding to 2 decimal places
+  const orderTotal = parseFloat(subtotal + parseInt(tax)).toFixed(2);
 
-        <div>
-          <h3>quantity</h3>
-          <div>
-            <button style={{ marginRight: '1.25rem' }}>-</button>
-            <span className='quantity'>1</span>
-            <button  style={{ marginLeft: '1.25rem' }}>+</button>
+  return (
+    <div id='cart-summary' className='cart-col' style={{ flexGrow: 1 }}>
+      <ul>
+        <li>
+          <div className='bold'>subtotal</div>
+          <div className='bold'>${subtotal}</div>
+        </li>
+        <li>
+          <div className='bold'>shipping
+            <div className='non-bold'>Standard Ground Shipping</div>
           </div>
-          <div>
-            <button id='remove-from-cart'>remove</button>
+          <div className='bold'>$0</div>
+        </li>
+        <li className='border-bottom'>
+          <div className='bold'>tax
+            <div className='non-bold'>taxing at 8.7%</div>
           </div>
-        </div>
-
-        <div>
-          <h3>total</h3>
-          <div>
-            <span className='price'>$1,200.00</span>
-          </div>
-        </div>
-      </div>
+          <div className='bold'>${tax}</div>
+        </li>
+        <li>
+          <div className='bold'>order total</div>
+          <div className='bold'>${orderTotal}</div>
+        </li>
+        <li>
+          <div className='non-bold'>* Shipping is based on flat rate for up to 7 working days shipping.</div>
+        </li>
+      </ul>
     </div>
-  </div>
-);
-
-const CartSummary = () => (
-  <div id='cart-summary' className='cart-col' style={{ flexGrow: 1 }}>
-    <ul>
-      <li>
-        <div className='bold'>subtotal</div>
-        <div className='bold'>$1,500.00</div>
-      </li>
-      <li>
-        <div className='bold'>shipping
-          <div className='non-bold'>Standard Ground Shipping</div>
-        </div>
-        <div className='bold'>$0</div>
-      </li>
-      <li className='border-bottom'>
-        <div className='bold'>tax
-          <div className='non-bold'>taxing at 8.7%</div>
-        </div>
-        <div className='bold'>$257.83</div>
-      </li>
-      <li>
-        <div className='bold'>order total</div>
-        <div className='bold'>$1,757.83</div>
-      </li>
-      <li>
-        <div className='non-bold'>* Shipping is based on flat rate for up to 7 working days shipping.</div>
-        <div></div>
-      </li>
-    </ul>
-  </div>
-);
+  );
+}
 
 const EmptyCartMessage = () => (
   <div style={{ display: 'flex', justifyContent: 'center' }}>

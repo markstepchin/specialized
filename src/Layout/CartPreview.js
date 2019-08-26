@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { CartContext } from '../CartContext';
-import { bikes } from "../DataFiles/BikeData";
+import { getBikeList } from "../utils/general";
 
 class CartPreview extends React.Component {
   state = {
@@ -10,13 +10,8 @@ class CartPreview extends React.Component {
 
   render() {
     const { items, removeItem } = this.context;
-    const bikeList = items.map(cartBike => {
-      //find the bike in the data and make a copy
-      const bike = {...bikes.find(dataBike => dataBike.id === cartBike.id)};
-      bike.quantity = cartBike.quantity;
-      return bike;
-    });
-    // console.log(bikeList);
+
+    const bikeList = getBikeList(items);
     const subtotal = bikeList.reduce((acc, curr) => acc + parseInt(curr.details.price) * curr.quantity, 0);
 
     return (
