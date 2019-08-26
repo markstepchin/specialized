@@ -1,6 +1,10 @@
 a.cart-icon {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
-  padding-left: .5rem;
+  padding: 0 1rem;
   
   &:hover {
     color: rgb(217,55,49);
@@ -71,10 +75,10 @@ a.cart-icon {
     text-align: center;
     text-transform: uppercase;
     color: $whiteTextColor;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 300;
 
-    padding: 1.25rem;
+    padding: 1.125rem;
   }
 }
 

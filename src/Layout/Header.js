@@ -21,24 +21,20 @@ class Header extends React.Component {
             <button>Sign In</button>
           </div>
         </div>
+
         <div className='bottom-header'>
-          
           <button id='menu-button' onClick={this.onToggleClick}>
             <ion-icon name="menu"></ion-icon>
           </button>
           <Link className='logo' to='/'/>
           <ul>
-          <li><Link to='/shop-bikes'>Bikes</Link></li>
-          <li><Link to='/shop-trail'>Trail</Link></li>
-          <li><Link to='/shop-downhill'>Downhill</Link></li>
-          <li><Link to='/shop-sworks'>S-works</Link></li>
-          <li><Link to='/#'>inside specialized</Link></li>
+            <li><Link to='/shop-bikes'>Bikes</Link></li>
+            <li><Link to='/shop-trail'>Trail</Link></li>
+            <li><Link to='/shop-downhill'>Downhill</Link></li>
+            <li><Link to='/shop-sworks'>S-works</Link></li>
+            <li><Link to='/#'>inside specialized</Link></li>
           </ul>
-          <div>
-            {/* <span className='search-icon'/> */}
-            <CartPreview />
-          </div>
-          
+          <CartPreview />
         </div>
       </header>
     );
