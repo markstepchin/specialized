@@ -27,8 +27,8 @@ const Footer = () => (
       </div>
       <div>
         <div>
-          <a href='/privacy-policy'>Privacy Policy</a>
-          <a href='/transparency'>California Transparency Act</a>
+          <a href='/#' style={{ textAlign: 'center' }}>Privacy Policy</a>
+          <a href='/#' style={{ textAlign: 'center' }}>California Transparency Act</a>
         </div>
         <div style={{ textAlign: 'center' }}>© 2019. Specialized Bicycle Components. All Rights Reserved.</div>
       </div>

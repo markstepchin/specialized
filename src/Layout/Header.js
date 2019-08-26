@@ -32,7 +32,6 @@ class Header extends React.Component {
             <li><Link to='/shop-trail'>Trail</Link></li>
             <li><Link to='/shop-downhill'>Downhill</Link></li>
             <li><Link to='/shop-sworks'>S-works</Link></li>
-            <li><Link to='/#'>inside specialized</Link></li>
           </ul>
           <CartPreview />
         </div>
@@ -49,14 +48,13 @@ const ToolBar = ({ isOpen, onClick }) => (
           <ion-icon name="close"></ion-icon>
         </button>
         <div>Shop</div>
-        <a href='/#'>Inside specialized</a>
+        <div></div>
       </div>
       <ul>
         <li onClick={onClick}><Link to='/shop-bikes'>Bikes</Link></li>
         <li onClick={onClick}><Link to='/shop-trail'>Trail</Link></li>
         <li onClick={onClick}><Link to='/shop-downhill'>Downhill</Link></li>
-        <li onClick={onClick}><Link to='/shop-s-works'>S-works</Link></li>
-        <li onClick={onClick}><Link to='/'>inside specialized</Link></li>
+        <li onClick={onClick}><Link to='/shop-sworks'>S-works</Link></li>
       </ul>
     </div>
 );
