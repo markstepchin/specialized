@@ -10,8 +10,15 @@ class CartPreview extends React.Component {
 
   render() {
     const { items } = this.context;
-    const bikeList = items.map(id => bikes.find(b => b.id === id));
-    const subtotal = bikeList.reduce((acc, curr) => acc + parseInt(curr.details.price), 0);
+    const bikeList = items.map(cartBike => {
+      //find the bike in the data and make a copy
+      const bike = {...bikes.find(dataBike => dataBike.id === cartBike.id)};
+      bike.quantity = cartBike.quantity;
+      return bike;
+    });
+    console.log(bikeList);
+    console.log("bikes: ", bikes)
+    const subtotal = bikeList.reduce((acc, curr) => acc + parseInt(curr.details.price) * curr.quantity, 0);
 
     return (
       <>
@@ -37,16 +44,20 @@ class CartPreview extends React.Component {
 
 const CartListing = ({ bikeList }) => (
   <div id='preview-item-listing'>
-    {bikeList.map(bike => (
-      <div style={{ display: 'flex', marginBottom: '2rem' }}>
-        <img src={bike.image} alt='product' style={{ width: '150px' }}/>
-        <div className='details'>
-          <h3>{bike.details.name}</h3>
-          <h4>${bike.details.price}</h4>
-          <h4>QTY 1</h4>
+    {bikeList.length === 0 ? (
+      <span style={{ fontSize: '.9rem', fontWeight: '400' }}>cart is empty</span>
+    ) : (
+      bikeList.map(bike => (
+        <div style={{ display: 'flex', marginBottom: '2rem' }}>
+          <img src={bike.image} alt='product' style={{ width: '150px' }}/>
+          <div className='details'>
+            <h3>{bike.details.name}</h3>
+            <h4>${bike.details.price}</h4>
+            <h4>QTY {bike.quantity}</h4>
+          </div>
+          <button className='close-button'><ion-icon name="close"></ion-icon></button>
         </div>
-        <button className='close-button'><ion-icon name="close"></ion-icon></button>
-      </div>
+    )
     ))}
   </div>
 );

@@ -9,8 +9,30 @@ class CartContainer extends React.Component {
   }
 
   addItem = id => {
+    const updatedItems = [...this.state.items];
+
+    //check if the item is already in the cart
+    let itemExists = false;
+    updatedItems.forEach(item => {
+      //if yes, increment the quantity for the corresponding id
+      if (item.id === id) {
+        item.quantity++;
+        itemExists = true;
+      }
+    });
+
+    //if not, add the item
+    if (!itemExists) {
+      updatedItems.push({
+        id,
+        quantity: 1
+      })
+    }
+
+    console.log(updatedItems)
+
     this.setState({ 
-      items: [...this.state.items, id],
+      items: updatedItems,
       itemAdded: true
     });
     
