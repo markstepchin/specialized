@@ -9,15 +9,14 @@ class CartPreview extends React.Component {
   }
 
   render() {
-    const { items } = this.context;
+    const { items, removeItem } = this.context;
     const bikeList = items.map(cartBike => {
       //find the bike in the data and make a copy
       const bike = {...bikes.find(dataBike => dataBike.id === cartBike.id)};
       bike.quantity = cartBike.quantity;
       return bike;
     });
-    console.log(bikeList);
-    console.log("bikes: ", bikes)
+    // console.log(bikeList);
     const subtotal = bikeList.reduce((acc, curr) => acc + parseInt(curr.details.price) * curr.quantity, 0);
 
     return (
@@ -32,7 +31,7 @@ class CartPreview extends React.Component {
         </Link>
         {(this.state.hover || this.context.itemAdded) && (
           <div id='cart-preview'>
-            <CartListing bikeList={bikeList}/>
+            <CartListing bikeList={bikeList} removeItem={removeItem}/>
             <CartSubtotal subtotal={subtotal}/>
             <Link to='/cart' className='checkout-button'>view cart and checkout</Link>
           </div>
@@ -42,20 +41,22 @@ class CartPreview extends React.Component {
   }
 }
 
-const CartListing = ({ bikeList }) => (
+const CartListing = ({ bikeList, removeItem }) => (
   <div id='preview-item-listing'>
     {bikeList.length === 0 ? (
       <span style={{ fontSize: '.9rem', fontWeight: '400' }}>cart is empty</span>
     ) : (
       bikeList.map(bike => (
-        <div style={{ display: 'flex', marginBottom: '2rem' }}>
+        <div style={{ display: 'flex', marginBottom: '2rem' }} key={bike.id}>
           <img src={bike.image} alt='product' style={{ width: '150px' }}/>
           <div className='details'>
             <h3>{bike.details.name}</h3>
             <h4>${bike.details.price}</h4>
             <h4>QTY {bike.quantity}</h4>
           </div>
-          <button className='close-button'><ion-icon name="close"></ion-icon></button>
+          <button className='close-button' onClick={() => removeItem(bike.id)}>
+            <ion-icon name="close"></ion-icon>
+          </button>
         </div>
     )
     ))}
