@@ -46,12 +46,48 @@ class CartContainer extends React.Component {
     this.setState({ items: newArray })
   }
 
+  subtractQuantity = id => {
+    const updatedItems = [...this.state.items];
+
+    let toRemove = null;
+    updatedItems.forEach((item, i) => {
+      if (item.id === id) {
+        item.quantity--;
+        console.log(item)
+        if (item.quantity === 0) {
+          toRemove = i;
+        }
+      }
+    })
+
+    if (toRemove !== null) {
+      updatedItems.splice(toRemove, 1);
+    }
+
+    this.setState({ items: updatedItems })
+  }
+
+  addQuantity = id => {
+    const updatedItems = [...this.state.items];
+
+    updatedItems.forEach(item => {
+      if (item.id === id) {
+        item.quantity++;
+      }
+    })
+
+    this.setState({ items: updatedItems })
+  }
+  
+
   render() {
     return (
       <CartContext.Provider value={{ 
           items: this.state.items,
           addItem: this.addItem,
           removeItem: this.removeItem,
+          addQuantity: this.addQuantity,
+          subtractQuantity: this.subtractQuantity,
           itemAdded: this.state.itemAdded
         }}>
         {this.props.children}

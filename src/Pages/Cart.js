@@ -5,13 +5,21 @@ import { getBikeList } from '../utils/general';
 
 class Cart extends React.Component {
   render() {
-    const { items, removeItem } = this.context;
+    const { items, addItem, removeItem, addQuantity, subtractQuantity } = this.context;
     const bikeList = getBikeList(items);
 
     return (
       <section id='cart'>
         <h1 className='cart-col'>Shopping cart</h1>
-        {bikeList.length > 0 ? <CartContents bikeList={bikeList} removeItem={removeItem}/> : <EmptyCartMessage />}
+        {bikeList.length > 0 ? 
+          <CartContents 
+            bikeList={bikeList} 
+            addItem={addItem} 
+            addQuantity={addQuantity}
+            removeItem={removeItem} 
+            subtractQuantity={subtractQuantity}
+          /> 
+          : <EmptyCartMessage />}
         <CartFooter />
       </section>
     )
@@ -20,14 +28,20 @@ class Cart extends React.Component {
 
 Cart.contextType = CartContext;
 
-const CartContents = ({ bikeList, removeItem }) => (
+const CartContents = ({ bikeList, removeItem, addItem, addQuantity, subtractQuantity }) => (
   <div id='cart-contents'>
-    <CartListing bikeList={bikeList} removeItem={removeItem}/>
+    <CartListing 
+      bikeList={bikeList} 
+      removeItem={removeItem} 
+      addItem={addItem} 
+      addQuantity={addQuantity}
+      subtractQuantity={subtractQuantity}
+    />
     <CartSummary bikeList={bikeList}/>
   </div>
 );
 
-const CartListing = ({ bikeList, removeItem }) => (
+const CartListing = ({ bikeList, removeItem, addItem, addQuantity, subtractQuantity }) => (
   <div className='cart-col' style={{ flexGrow: 2 }}>
     {bikeList.map(bike => (
       <div id='cart-listing'>
@@ -54,9 +68,9 @@ const CartListing = ({ bikeList, removeItem }) => (
           <div>
             <h3>quantity</h3>
             <div>
-              <button style={{ marginRight: '1.25rem' }}>-</button>
+              <button style={{ padding: '0 1rem' }} onClick={() => subtractQuantity(bike.id)}>-</button>
               <span className='quantity'>{bike.quantity}</span>
-              <button  style={{ marginLeft: '1.25rem' }}>+</button>
+              <button style={{ padding: '0 1rem' }} onClick={() => addQuantity(bike.id)}>+</button>
             </div>
             <div>
               <button id='remove-from-cart' onClick={() => removeItem(bike.id)}>remove</button>
