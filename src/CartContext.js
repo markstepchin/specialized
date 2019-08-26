@@ -4,11 +4,7 @@ const SEC_SHOW_CART_PREVIEW = 5;
 
 class CartContainer extends React.Component {
   state = {
-    items: [
-      'hello world',
-      'whats up',
-      'heeeeeeey'
-    ],
+    items: [],
     itemAdded: false
   }
 

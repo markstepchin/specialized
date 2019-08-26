@@ -6,7 +6,7 @@ import { bikes } from "../DataFiles/BikeData";
 import { CartContext } from "../CartContext";
 
 const ProductPage = ({ match: { params: { id } } }) => {
-  const bike = bikes.find(b => b.id === id)  
+  const bike = bikes.find(b => b.id === id); 
   const { images, details } = bike;
 
   return (
