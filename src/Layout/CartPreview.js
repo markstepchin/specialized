@@ -5,7 +5,7 @@ import { bikes } from "../DataFiles/BikeData";
 
 class CartPreview extends React.Component {
   state = {
-    hover: true
+    hover: false
   }
 
   render() {

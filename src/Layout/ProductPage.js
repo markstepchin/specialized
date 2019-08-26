@@ -21,7 +21,7 @@ const ProductPage = ({ match: { params: { id } } }) => {
 }
 
 const DisplayFooter = ({ id, details: { name, price, partNumber } }) => (
-  <CartContext>
+  <CartContext.Consumer>
     {({addItem}) => (
       <section id='display-footer-container'>
         <div className='section-1'>
@@ -47,12 +47,12 @@ const DisplayFooter = ({ id, details: { name, price, partNumber } }) => (
         </div>
       </section>
     )}
-  </CartContext>
+  </CartContext.Consumer>
   
 );
 
 const Description = ({ description: { intro, description, list } }) => {
-  const [more = false, setMore] = useState(0);
+  const [more, setMore] = useState(false);
 
   return (
     <section id='product-description-container'>
@@ -91,7 +91,7 @@ const TechnicalSpecs = ({ specs }) => (
             <>
               <h4 key={section.title}>{section.title}</h4>
               {section.items.map((item, i) => (
-                <div className='individual-spec' key={item.spec + item.item}>
+                <div className='individual-spec' key={`${item.spec}${item.item}`}>
                   <h5 key={item.spec}>{item.spec}</h5>
                   <p key={item.item}>{item.item}</p>
                 </div>
