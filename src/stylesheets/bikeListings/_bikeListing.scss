@@ -19,39 +19,13 @@ $mobileSidePadding: 4rem;
   font-size: 5.5rem;
   font-weight: 500;
   text-transform: uppercase;
-  text-shadow: 1px 1px 10px rgb(58, 58, 58);
+  text-shadow: 1px 1px 5px rgb(121, 121, 121);
 }
 
 .listing-background-title {
   padding-left: 5rem;
   padding-bottom: 5rem;
 }
-
-// #hero-img {
-//   margin-top: $sidePadding;
-//   width: 100%;
-//   position: relative;
-//   height: 50vh;
-//   overflow: hidden;
-
-//   img {
-//     min-height:100%; 
-//     min-width:100%;
-//   }
-
-//   #hero-text {
-//     position: absolute;
-//     top: 50%;
-//     left: 10%;
-//     transform: translate(0, -50%);
-
-//     color: white;
-//     font-size: 6rem;
-//     font-weight: 400;
-//     text-transform: uppercase;
-//     text-shadow: 1px 1px 10px rgb(58, 58, 58);
-//   }
-// }
 
 #description {
   margin: 4rem 10rem;
@@ -111,7 +85,7 @@ $mobileSidePadding: 4rem;
   }
 
   .bike-listing-background {
-    font-size: 4rem;
+    font-size: 3.7rem;
     font-weight: 700;
   }
   
