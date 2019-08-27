@@ -7,8 +7,8 @@ header {
 }
 
 .top-header {
-  background-color: rgb(18,18,18);
-  color: rgb(255,255,255);
+  background-color: rgb(18, 18, 18);
+  color: rgb(255, 255, 255);
   padding-left: 3rem;
   display: flex;
   justify-content: space-between;
@@ -20,13 +20,13 @@ header {
     height: 100%;
 
     span {
-      font-size: .7rem;
+      font-size: 0.7rem;
       font-weight: 600;
       padding: 0 1.5rem;
     }
 
     .find-retailer-icon {
-      background: url('../Assets/Icons/map-marker.svg');
+      background: url("../Assets/Icons/map-marker.svg");
       background-position: center;
       background-repeat: no-repeat;
 
@@ -36,12 +36,12 @@ header {
 
       position: relative;
       top: 1px;
-      right: .5rem;
-      padding: 0; 
+      right: 0.5rem;
+      padding: 0;
     }
 
     .flag-icon {
-      background: url('../Assets/Icons/us-flag.svg');
+      background: url("../Assets/Icons/us-flag.svg");
       background-position: center;
       background-repeat: no-repeat;
 
@@ -52,16 +52,16 @@ header {
       position: relative;
       top: 6.25px;
       right: 3px;
-      padding: 0; 
+      padding: 0;
     }
 
     button {
       padding: 0 3rem;
       height: 100%;
-      background-color: rgb(65,65,65);
-      color: rgb(255,255,255);
+      background-color: rgb(65, 65, 65);
+      color: rgb(255, 255, 255);
       font-weight: 600;
-      font-size: .75rem;
+      font-size: 0.75rem;
       letter-spacing: 0.0625em;
       text-transform: uppercase;
       border: none;
@@ -90,7 +90,7 @@ header {
 
   a {
     text-decoration: none;
-    font-size: .85rem;
+    font-size: 0.85rem;
     color: $textColor;
   }
 
@@ -109,13 +109,13 @@ header {
 
     a {
       text-decoration: none;
-      font-size: .85rem;
+      font-size: 0.85rem;
       font-weight: 600;
       color: $textColor;
-      letter-spacing: -.25px;
+      letter-spacing: -0.25px;
 
       &:hover {
-        color: rgb(217,55,49);
+        color: rgb(217, 55, 49);
       }
     }
   }
@@ -139,37 +139,36 @@ header {
   //   width: 23px;
   //   height: 23px;
   //   padding-left: .5rem;
-    
+
   //   &:hover {
   //     color: rgb(217,55,49);
   //   }
   // }
 
   .search-icon {
-    background: url('../Assets/Icons/search.svg');
+    background: url("../Assets/Icons/search.svg");
     background-position: center;
     background-repeat: no-repeat;
 
     display: inline-block;
     width: 23px;
     height: 23px;
-    padding: 0 .5rem; 
+    padding: 0 0.5rem;
 
     &:hover {
-      color: rgb(217,55,49);
+      color: rgb(217, 55, 49);
     }
   }
 }
 
 /* Large tablet: 1023px - 1200px*/
 @media only screen and (max-width: 1200px) {
-
 }
 
 /* Small tablet to large tablet: 767px - 1023px */
 @media only screen and (max-width: 1023px) {
   .top-header {
-    font-size: .8rem;
+    font-size: 0.8rem;
     padding-left: 1rem;
   }
 
@@ -178,9 +177,9 @@ header {
 
     li {
       margin: 0 1rem;
-  
+
       a {
-        font-size: .75rem;
+        font-size: 0.75rem;
       }
     }
   }
@@ -214,5 +213,4 @@ header {
 
 /* small phones: 0 - 480px */
 @media only screen and (max-width: 480px) {
-
 }

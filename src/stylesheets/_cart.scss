@@ -14,7 +14,7 @@
   }
 
   .cart-col {
-    padding: 0 .75rem;
+    padding: 0 0.75rem;
   }
 }
 
@@ -25,20 +25,21 @@
 #empty-cart {
   text-align: center;
 
-  h2, p {
+  h2,
+  p {
     margin: 0;
   }
 
   h2 {
     font-weight: 400;
-    letter-spacing: -.75px;
+    letter-spacing: -0.75px;
     margin-bottom: 1.5rem;
   }
 
   p {
-    font-size: .85rem;
-    letter-spacing: -.35px;
-    margin-bottom: .5rem
+    font-size: 0.85rem;
+    letter-spacing: -0.35px;
+    margin-bottom: 0.5rem;
   }
 
   a {
@@ -62,11 +63,12 @@
   h3 {
     font-size: 1rem;
     font-weight: 500;
-    letter-spacing: -.35px;
+    letter-spacing: -0.35px;
   }
 
-  p, a {
-    margin: .45rem 0;
+  p,
+  a {
+    margin: 0.45rem 0;
   }
 
   a {
@@ -74,15 +76,12 @@
   }
 }
 
-
 /* Large tablet: 1023px - 1200px*/
 @media only screen and (max-width: 1200px) {
-
 }
 
 /* Small tablet to large tablet: 767px - 1023px */
 @media only screen and (max-width: 1023px) {
-
 }
 
 /* small phones to small tablets: 480px - 767px */
@@ -99,5 +98,4 @@
 
 /* small phones: 0 - 480px */
 @media only screen and (max-width: 480px) {
-
 }

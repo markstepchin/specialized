@@ -1,5 +1,5 @@
 footer {
-  background-color: rgb(20,20,20);
+  background-color: rgb(20, 20, 20);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -13,16 +13,17 @@ footer {
     display: flex;
     align-items: center;
 
-    input, button {
+    input,
+    button {
       height: 2.8rem;
       border: none;
       box-sizing: border-box;
     }
 
     input {
-      background-color: rgb(65,65,65);
+      background-color: rgb(65, 65, 65);
       padding: 1.25rem;
-      color: rgb(255,255,255);
+      color: rgb(255, 255, 255);
 
       &::placeholder {
         color: rgb(151, 151, 151);
@@ -37,7 +38,7 @@ footer {
 
       &:hover {
         background-color: rgb(190, 38, 33);
-        transition: background-color .25s;
+        transition: background-color 0.25s;
       }
     }
   }
@@ -48,17 +49,17 @@ footer {
 
     margin-top: 2.5rem;
     color: rgb(134, 134, 134);
-    font-size: .7rem;
-    letter-spacing: .05px;
+    font-size: 0.7rem;
+    letter-spacing: 0.05px;
 
     a {
       color: white;
-      margin-top: .5rem;
+      margin-top: 0.5rem;
       font-weight: 600;
 
       &:hover {
         color: $redText;
-        transition: color .125s;
+        transition: color 0.125s;
       }
     }
   }
@@ -69,18 +70,18 @@ footer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    font-size: .75rem;
+    font-size: 0.75rem;
     padding: 0 3rem;
     margin-bottom: 2rem;
 
     a {
-      margin: .5rem 1rem;
+      margin: 0.5rem 1rem;
       color: $whiteTextColor;
       text-decoration: none;
 
       &:hover {
         color: $redText;
-        transition: color .125s;
+        transition: color 0.125s;
       }
     }
   }
@@ -91,7 +92,7 @@ footer {
     div {
       display: flex;
       justify-content: center;
-      font-size: .75rem;
+      font-size: 0.75rem;
 
       a {
         margin: 1.5rem 1rem;
@@ -100,16 +101,16 @@ footer {
 
         &:hover {
           color: $redText;
-          transition: color .125s;
+          transition: color 0.125s;
         }
       }
     }
-  }    
+  }
 }
 
 .footer-col-3 {
   button {
-    background-color: rgb(65,65,65);
+    background-color: rgb(65, 65, 65);
     color: $whiteTextColor;
     text-transform: uppercase;
     width: 18rem;
@@ -118,7 +119,7 @@ footer {
 
     &:hover {
       background-color: rgb(190, 38, 33);
-      transition: background-color .125s;
+      transition: background-color 0.125s;
     }
   }
 
@@ -136,14 +137,13 @@ footer {
 
     &:hover {
       color: $redText;
-      transition: background-color .125s;
+      transition: background-color 0.125s;
     }
   }
 }
 
 /* Large tablet: 1023px - 1200px*/
 @media only screen and (max-width: 1200px) {
-
 }
 
 /* Small tablet to large tablet: 767px - 1023px */
@@ -164,12 +164,13 @@ footer {
       display: flex;
       flex-direction: column;
 
-      input, button {
+      input,
+      button {
         width: 100%;
       }
 
       input {
-        margin-bottom: .75rem;
+        margin-bottom: 0.75rem;
       }
     }
   }
@@ -185,17 +186,15 @@ footer {
     }
 
     li {
-      margin: .25rem 1rem;
+      margin: 0.25rem 1rem;
     }
   }
 }
 
 /* small phones to small tablets: 480px - 767px */
 @media only screen and (max-width: 767px) {
-
 }
 
 /* small phones: 0 - 480px */
 @media only screen and (max-width: 480px) {
-
 }

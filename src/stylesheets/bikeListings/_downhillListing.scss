@@ -1,10 +1,9 @@
 #downhill-listing-background {
   background: linear-gradient(
-    rgba(255, 128, 0, 0.007), 
-    rgba(255, 128, 0, 0.185), 
-  ), url('../../Assets/Images/Downhill/DownHillHero.jpg');
+      rgba(255, 128, 0, 0.007),
+      rgba(255, 128, 0, 0.185)
+    ),
+    url("../../Assets/Images/Downhill/DownHillHero.jpg");
   background-size: cover;
   background-position: center;
-  // background-color: black;
-  // opacity: 50%;
 }

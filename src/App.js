@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import LandingPage from "./Pages/LandingPage";
@@ -10,23 +10,26 @@ import ProductPage from "./Layout/ProductPage";
 import Cart from "./Pages/Cart";
 import Header from "./Layout/Header";
 import Footer from "./Layout/Footer";
-import CartContainer from './CartContext';
+import CartContainer from "./CartContext";
 
-import './App.scss';
+import "./App.scss";
 
 function App() {
   return (
     <Router>
       <CartContainer>
         <Header />
-        <div id='page-container'>
-          <Route exact path='/' component={() => <LandingPage />}/>
-          <Route path='/shop-bikes' component={() => <AllBikesListing />}/>
-          <Route path='/shop-trail' component={() => <TrailBikeListing />}/>
-          <Route path='/shop-downhill' component={() => <DownhillBikeListing />}/>
-          <Route path='/shop-sworks' component={() => <SworksBikeListing />}/>
-          <Route path='/shop/:id' component={() => <ProductPage />}/>
-          <Route path='/cart' component={() => <Cart />} />
+        <div id="page-container">
+          <Route exact path="/" component={() => <LandingPage />} />
+          <Route path="/shop-bikes" component={() => <AllBikesListing />} />
+          <Route path="/shop-trail" component={() => <TrailBikeListing />} />
+          <Route
+            path="/shop-downhill"
+            component={() => <DownhillBikeListing />}
+          />
+          <Route path="/shop-sworks" component={() => <SworksBikeListing />} />
+          <Route path="/shop/:id" component={() => <ProductPage />} />
+          <Route path="/cart" component={() => <Cart />} />
         </div>
         <Footer />
       </CartContainer>

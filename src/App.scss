@@ -1,5 +1,5 @@
-$textColor: rgb(18,18,18);
-$whiteTextColor: rgb(255,255,255);
+$textColor: rgb(18, 18, 18);
+$whiteTextColor: rgb(255, 255, 255);
 $redText: rgb(235, 47, 41);
 $hoverText: rgb(190, 38, 33);
 $backgroundRed: #ed1c24;
@@ -8,27 +8,27 @@ $topHeaderHeight: 2.25rem;
 $bottomHeaderHeight: 4.45rem;
 $bottomHeaderHeight-mobile: 3.3rem;
 
-@import './stylesheets/header';
-@import './stylesheets/footer';
-@import './stylesheets/landingPage';
-@import './stylesheets/toolbar';
-@import './stylesheets/bikeListings/bikeListing';
-@import './stylesheets/bikeListings/allBikeListing';
-@import './stylesheets/bikeListings/trailListing';
-@import './stylesheets/bikeListings/downhillListing';
-@import './stylesheets/bikeListings/sworksListing';
-@import './stylesheets/itemCard';
-@import './stylesheets/productPage/productPage';
-@import './stylesheets/productPage/gallery';
-@import './stylesheets/productPage/galleryFooter';
-@import './stylesheets/productPage/description';
-@import './stylesheets/productPage/specs';
+@import "./stylesheets/header";
+@import "./stylesheets/footer";
+@import "./stylesheets/landingPage";
+@import "./stylesheets/toolbar";
+@import "./stylesheets/bikeListings/bikeListing";
+@import "./stylesheets/bikeListings/allBikeListing";
+@import "./stylesheets/bikeListings/trailListing";
+@import "./stylesheets/bikeListings/downhillListing";
+@import "./stylesheets/bikeListings/sworksListing";
+@import "./stylesheets/itemCard";
+@import "./stylesheets/productPage/productPage";
+@import "./stylesheets/productPage/gallery";
+@import "./stylesheets/productPage/galleryFooter";
+@import "./stylesheets/productPage/description";
+@import "./stylesheets/productPage/specs";
 @import "~react-image-gallery/styles/scss/image-gallery.scss";
-@import './stylesheets//productPage/reviews';
-@import './stylesheets/cart';
-@import './stylesheets/cart/cartListing';
-@import './stylesheets/cart/cartSummary';
-@import './stylesheets/cart/cartPreview';
+@import "./stylesheets//productPage/reviews";
+@import "./stylesheets/cart";
+@import "./stylesheets/cart/cartListing";
+@import "./stylesheets/cart/cartSummary";
+@import "./stylesheets/cart/cartPreview";
 
 #page-container {
   max-width: 1920px;
@@ -38,7 +38,7 @@ $bottomHeaderHeight-mobile: 3.3rem;
 }
 
 html {
-  background-color: rgb(247,247,247);
+  background-color: rgb(247, 247, 247);
   color: #414141;
 }
 

@@ -4,7 +4,8 @@ $mobileSidePadding: 4rem;
 #listing-container {
   background-color: #f8f8f8;
   /* top | right | bottom | left */
-  padding: $topHeaderHeight + $bottomHeaderHeight $sidePadding $sidePadding $sidePadding;
+  padding: $topHeaderHeight + $bottomHeaderHeight $sidePadding $sidePadding
+    $sidePadding;
 }
 
 .bike-listing-background {
@@ -44,7 +45,7 @@ $mobileSidePadding: 4rem;
   #description {
     margin: 4rem 5rem;
   }
-  
+
   .listing-background-title {
     padding-left: 2rem;
     padding-bottom: 2rem;
@@ -53,7 +54,7 @@ $mobileSidePadding: 4rem;
 
 /* Small tablet to large tablet: 767px - 1023px */
 @media only screen and (max-width: 1023px) {
-  #hero-img {  
+  #hero-img {
     #hero-text {
       font-size: 4rem;
     }
@@ -68,10 +69,11 @@ $mobileSidePadding: 4rem;
 @media only screen and (max-width: 767px) {
   #listing-container {
     /* top | right | bottom | left */
-    padding: $topHeaderHeight + $bottomHeaderHeight-mobile $mobileSidePadding $mobileSidePadding $mobileSidePadding;
+    padding: $topHeaderHeight + $bottomHeaderHeight-mobile $mobileSidePadding
+      $mobileSidePadding $mobileSidePadding;
   }
 
-  #hero-img {  
+  #hero-img {
     margin-top: $mobileSidePadding;
 
     #hero-text {
@@ -88,7 +90,7 @@ $mobileSidePadding: 4rem;
     font-size: 3.7rem;
     font-weight: 700;
   }
-  
+
   .listing-background-title {
     padding-left: 2rem;
     padding-bottom: 2rem;
@@ -102,7 +104,7 @@ $mobileSidePadding: 4rem;
     padding: $topHeaderHeight + $bottomHeaderHeight-mobile 1rem 1rem 1rem;
   }
 
-  #hero-img {  
+  #hero-img {
     margin-top: 1rem;
 
     #hero-text {
@@ -114,7 +116,7 @@ $mobileSidePadding: 4rem;
     font-size: 3.5rem;
     font-weight: 800;
   }
-  
+
   .listing-background-title {
     padding-left: 1rem;
     padding-bottom: 1rem;

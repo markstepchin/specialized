@@ -9,7 +9,7 @@
   margin: 1rem;
   padding: 2rem 1.5rem;
   width: calc(33% - 6rem);
-  background-color: rgb(255,255,255);
+  background-color: rgb(255, 255, 255);
 
   color: #414141;
   text-decoration: none;
@@ -27,26 +27,24 @@
 
   p {
     text-align: center;
-    font-size: .75rem;
+    font-size: 0.75rem;
     font-weight: 200;
-    transform:scale(1, 1.075)
+    transform: scale(1, 1.075);
   }
 }
 
 /* Large tablet: 1023px - 1200px*/
 @media only screen and (max-width: 1200px) {
-
 }
 
 /* Small tablet to large tablet: 767px - 1023px */
 @media only screen and (max-width: 1023px) {
-
 }
 
 /* small phones to small tablets: 480px - 767px */
 @media only screen and (max-width: 767px) {
   .item-card {
-    margin: .5rem;
+    margin: 0.5rem;
     padding: 1rem 1.5rem;
     width: calc(50% - 4rem);
   }
@@ -55,7 +53,7 @@
 /* small phones: 0 - 480px */
 @media only screen and (max-width: 480px) {
   .item-card {
-    margin: .5rem 0;
+    margin: 0.5rem 0;
     padding: 1rem 1.5rem;
     width: 100%;
   }
