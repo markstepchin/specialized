@@ -1,11 +1,12 @@
 import React from "react";
 
-const SEC_SHOW_CART_PREVIEW = 5;
+const SEC_SHOW_CART_PREVIEW = 3;
 
 class CartContainer extends React.Component {
   state = {
     items: [],
-    itemAdded: false
+    itemAdded: false,
+    hovering: false,
   }
 
   addItem = id => {
@@ -29,14 +30,12 @@ class CartContainer extends React.Component {
       })
     }
 
-    console.log(updatedItems)
-
     this.setState({ 
       items: updatedItems,
       itemAdded: true
     });
     
-    setTimeout(() => this.setState({itemAdded: false}), SEC_SHOW_CART_PREVIEW * 1000);
+    setTimeout(() => this.setState({ itemAdded: false }), SEC_SHOW_CART_PREVIEW * 1000);
   }
 
   removeItem = id => {
@@ -53,7 +52,6 @@ class CartContainer extends React.Component {
     updatedItems.forEach((item, i) => {
       if (item.id === id) {
         item.quantity--;
-        console.log(item)
         if (item.quantity === 0) {
           toRemove = i;
         }
@@ -78,7 +76,11 @@ class CartContainer extends React.Component {
 
     this.setState({ items: updatedItems })
   }
-  
+
+  onCartPreviewHover = () => this.setState({ hovering: true });
+  onCartPreviewHoverExit = () => this.setState({ hovering: false });
+  /* Need to hide the preview when it's clicked. itemAdded is for displaying cart preview after adding item */ 
+  onCartPreviewClick = () => this.setState({ hovering: false, itemAdded: false });
 
   render() {
     return (
@@ -88,7 +90,10 @@ class CartContainer extends React.Component {
           removeItem: this.removeItem,
           addQuantity: this.addQuantity,
           subtractQuantity: this.subtractQuantity,
-          itemAdded: this.state.itemAdded
+          onCartPreviewHover: this.onCartPreviewHover,
+          onCartPreviewHoverExit: this.onCartPreviewHoverExit,
+          onCartPreviewClick: this.onCartPreviewClick,
+          showPreview: this.state.hovering || this.state.itemAdded
         }}>
         {this.props.children}
       </CartContext.Provider>

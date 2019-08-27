@@ -4,12 +4,8 @@ import { CartContext } from '../CartContext';
 import { getBikeList } from "../utils/general";
 
 class CartPreview extends React.Component {
-  state = {
-    hover: false
-  }
-
   render() {
-    const { items, removeItem } = this.context;
+    const { items, removeItem, onCartPreviewHover, onCartPreviewHoverExit, onCartPreviewClick, showPreview } = this.context;
 
     const bikeList = getBikeList(items);
     const subtotal = bikeList.reduce((acc, curr) => acc + parseInt(curr.details.price) * curr.quantity, 0);
@@ -19,25 +15,23 @@ class CartPreview extends React.Component {
         <Link 
           to='/cart' 
           className='cart-icon'
-          onClick={() => this.setState({ hover: false })}
-          onMouseEnter={() => this.setState({ hover: true })}
-          onMouseLeave={() => this.setState({ hover: false })}
-        >
+          onClick={() => onCartPreviewClick()}
+          onMouseEnter={() => onCartPreviewHover()}
+          onMouseLeave={() => onCartPreviewHoverExit()}>
           <ion-icon name="cart"></ion-icon>
         </Link>
-        {(this.state.hover || this.context.itemAdded) && (
+        {showPreview && (
           <div 
             id='cart-preview' 
-            onClick={() => this.setState({ hover: false })}
-            onMouseEnter={() => this.setState({ hover: true })}
-            onMouseLeave={() => this.setState({ hover: false })}>
+            onClick={() => onCartPreviewClick()}
+            onMouseEnter={() => onCartPreviewHover()}
+            onMouseLeave={() => onCartPreviewHoverExit()}>
             <CartListing bikeList={bikeList} removeItem={removeItem}/>
             <CartSubtotal subtotal={subtotal}/>
             <Link 
               to='/cart'
-              className='checkout-button'
-              >
-                view cart and checkout
+              className='checkout-button'>
+              view cart and checkout
             </Link>
           </div>
         )}
