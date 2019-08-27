@@ -5,6 +5,8 @@ const SEC_SHOW_CART_PREVIEW = 3;
 class CartContainer extends React.Component {
   state = {
     items: [],
+    
+    //used for controlling hover behavior
     itemAdded: false,
     hovering: false,
   }
