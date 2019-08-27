@@ -23,14 +23,14 @@ class CartPreview extends React.Component {
         {showPreview && (
           <div 
             id='cart-preview' 
-            onClick={() => onCartPreviewClick()}
             onMouseEnter={() => onCartPreviewHover()}
             onMouseLeave={() => onCartPreviewHoverExit()}>
             <CartListing bikeList={bikeList} removeItem={removeItem}/>
             <CartSubtotal subtotal={subtotal}/>
             <Link 
               to='/cart'
-              className='checkout-button'>
+              className='checkout-button'
+              onClick={() => onCartPreviewClick()}>
               view cart and checkout
             </Link>
           </div>

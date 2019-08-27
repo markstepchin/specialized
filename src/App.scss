@@ -37,3 +37,10 @@ html {
   background-color: rgb(247,247,247);
   color: #414141;
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
