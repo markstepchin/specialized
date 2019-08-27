@@ -48,7 +48,9 @@ const CartListing = ({ bikeList, removeItem, addItem, addQuantity, subtractQuant
         <div className='col'>
           <h3>details</h3>
           <div className='details-container'>
-            <img src={bike.image} alt='product'/>
+            <div style={{ width: '150px', height: '150px' }}>
+              <img src={bike.image} alt='product'/>
+            </div>
             <div style={{ padding: '0 2rem' }}>
               <h4>{bike.details.name}</h4>
               <span>Part No. {bike.details.partNumber}</span>  

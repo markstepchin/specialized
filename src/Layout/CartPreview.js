@@ -47,7 +47,10 @@ const CartListing = ({ bikeList, removeItem }) => (
     ) : (
       bikeList.map(bike => (
         <div style={{ display: 'flex', marginBottom: '2rem' }} key={bike.id}>
-          <img src={bike.image} alt='product' style={{ width: '150px' }}/>
+          <div style={{ width: '150px', height: '150px' }}>
+            <img src={bike.image} alt='product' style={{ width: '100%' }}/>
+          </div>
+          
           <div className='details'>
             <h3>{bike.details.name}</h3>
             <h4>${bike.details.price}</h4>
