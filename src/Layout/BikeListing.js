@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 
 const BikeListing = ({ data, title, description, children }) => (
   <div id='listing-container'>
-    <div id='hero-img'>
-      {children}
-      <span id='hero-text'>{title}</span>
-    </div>
+    {children}
     <div id='description'>
       {description && <p>{description}</p>}
     </div>

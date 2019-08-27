@@ -1,7 +1,6 @@
 import React from 'react';
 import BikeListing from "../Layout/BikeListing";
 import BikeData from "../DataFiles/BikeData";
-import bikeHeroImage from "../Assets/Images/Bikes/BikesHero.jpg";
 
 const data = BikeData;
 
@@ -9,9 +8,9 @@ const SworksBikeListing = () => (
   <BikeListing 
     data={data}
     title='Bikes'>
-    <img 
-      src={bikeHeroImage} 
-      alt='bike cover'/>
+    <div className='bike-listing-background' id='all-bikes-listing-background'>
+      <div className='listing-background-title'>bikes</div>
+    </div>
   </BikeListing>
 );
 
