@@ -3,7 +3,7 @@ import { description, specs } from "../DataFiles/ProductData";
 import Gallery from "./Gallery";
 import { withRouter } from "react-router-dom"; 
 import { bikes } from "../DataFiles/BikeData";
-import { CartContext } from "../CartContext";
+import { useCartContext } from "../CartContext";
 
 const ProductPage = ({ match: { params: { id } } }) => {
   const bike = bikes.find(b => b.id === id); 
@@ -20,36 +20,35 @@ const ProductPage = ({ match: { params: { id } } }) => {
   );
 }
 
-const DisplayFooter = ({ id, details: { name, price, partNumber } }) => (
-  <CartContext.Consumer>
-    {({addItem}) => (
-      <section id='display-footer-container'>
-        <div className='section-1'>
-          <h2 className='display-title'>
-            {name}
-          </h2>
-          <h3 className='display-price'>
-            ${price}
-          </h3>
-          <p className='display-partNumber'>
-            Part No.{' '}{partNumber}
-          </p>
-        </div>
+const DisplayFooter = ({ id, details: { name, price, partNumber } }) => {
+  const { addItem } = useCartContext();
 
-        <span className='in-stock'>In Stock</span>
+  return (
+    <section id='display-footer-container'>
+      <div className='section-1'>
+        <h2 className='display-title'>
+          {name}
+        </h2>
+        <h3 className='display-price'>
+          ${price}
+        </h3>
+        <p className='display-partNumber'>
+          Part No.{' '}{partNumber}
+        </p>
+      </div>
 
-        <div className='section-3'>
-          <button onClick={() => addItem(id)}>
-            add to cart
-          </button>
-          <button>tune my suspension</button>
-          <button>find nearby</button>
-        </div>
-      </section>
-    )}
-  </CartContext.Consumer>
-  
-);
+      <span className='in-stock'>In Stock</span>
+
+      <div className='section-3'>
+        <button onClick={() => addItem(id)}>
+          add to cart
+        </button>
+        <button>tune my suspension</button>
+        <button>find nearby</button>
+      </div>
+    </section>
+  )
+}
 
 const Description = ({ description: { intro, description, list } }) => {
   const [more, setMore] = useState(false);

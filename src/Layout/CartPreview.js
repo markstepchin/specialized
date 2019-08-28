@@ -1,43 +1,41 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { CartContext } from '../CartContext';
+import { useCartContext } from '../CartContext';
 import { getBikeList } from "../utils/general";
 
-class CartPreview extends React.Component {
-  render() {
-    const { items, removeItem, onCartPreviewHover, onCartPreviewHoverExit, onCartPreviewClick, showPreview } = this.context;
+export default function CartPreview() {
+  const { items, removeItem, onCartPreviewHover, onCartPreviewHoverExit, onCartPreviewClick, showPreview } = useCartContext();
 
-    const bikeList = getBikeList(items);
-    const subtotal = bikeList.reduce((acc, curr) => acc + parseInt(curr.details.price) * curr.quantity, 0);
+  const bikeList = getBikeList(items);
+  const subtotal = bikeList.reduce((acc, curr) => acc + parseInt(curr.details.price) * curr.quantity, 0);
 
-    return (
-      <>
-        <Link 
-          to='/cart' 
-          className='cart-icon'
-          onClick={() => onCartPreviewClick()}
+  return (
+    <>
+      <Link 
+        to='/cart' 
+        className='cart-icon'
+        onClick={() => onCartPreviewClick()}
+        onMouseEnter={() => onCartPreviewHover()}
+        onMouseLeave={() => onCartPreviewHoverExit()}>
+        <ion-icon name="cart"></ion-icon>
+      </Link>
+      {showPreview && (
+        <div 
+          id='cart-preview' 
           onMouseEnter={() => onCartPreviewHover()}
           onMouseLeave={() => onCartPreviewHoverExit()}>
-          <ion-icon name="cart"></ion-icon>
-        </Link>
-        {showPreview && (
-          <div 
-            id='cart-preview' 
-            onMouseEnter={() => onCartPreviewHover()}
-            onMouseLeave={() => onCartPreviewHoverExit()}>
-            <CartListing bikeList={bikeList} removeItem={removeItem}/>
-            <CartSubtotal subtotal={subtotal}/>
-            <Link 
-              to='/cart'
-              className='checkout-button'
-              onClick={() => onCartPreviewClick()}>
-              view cart and checkout
-            </Link>
-          </div>
-        )}
-      </>
-    )
-  }
+          <CartListing bikeList={bikeList} removeItem={removeItem}/>
+          <CartSubtotal subtotal={subtotal}/>
+          <Link 
+            to='/cart'
+            className='checkout-button'
+            onClick={() => onCartPreviewClick()}>
+            view cart and checkout
+          </Link>
+        </div>
+      )}
+    </>
+  )
 }
 
 const CartListing = ({ bikeList, removeItem }) => (
@@ -74,6 +72,3 @@ const CartSubtotal = ({ subtotal }) => (
     <span className='taxes'>Taxes are calculated at checkout</span>
   </div>
 );
-
-CartPreview.contextType = CartContext;
-export default CartPreview;

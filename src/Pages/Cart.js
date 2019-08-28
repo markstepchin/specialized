@@ -1,40 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../CartContext";
+import { CartContext, useCartContext } from "../CartContext";
 import { getBikeList } from "../utils/general";
 
-class Cart extends React.Component {
-  render() {
-    const {
-      items,
-      addItem,
-      removeItem,
-      addQuantity,
-      subtractQuantity
-    } = this.context;
-    const bikeList = getBikeList(items);
+const Cart = () => {
+  const {
+    items,
+    addItem,
+    removeItem,
+    addQuantity,
+    subtractQuantity
+  } = useCartContext();
+  const bikeList = getBikeList(items);
 
-    return (
-      <section id="cart">
-        <h1 className="cart-col">Shopping cart</h1>
-        {bikeList.length > 0 ? (
-          <CartContents
-            bikeList={bikeList}
-            addItem={addItem}
-            addQuantity={addQuantity}
-            removeItem={removeItem}
-            subtractQuantity={subtractQuantity}
-          />
-        ) : (
-          <EmptyCartMessage />
-        )}
-        <CartFooter />
-      </section>
-    );
-  }
+  return (
+    <section id="cart">
+      <h1 className="cart-col">Shopping cart</h1>
+      {bikeList.length > 0 ? (
+        <CartContents
+          bikeList={bikeList}
+          addItem={addItem}
+          addQuantity={addQuantity}
+          removeItem={removeItem}
+          subtractQuantity={subtractQuantity}
+        />
+      ) : (
+        <EmptyCartMessage />
+      )}
+      <CartFooter />
+    </section>
+  );
 }
-
-Cart.contextType = CartContext;
 
 const CartContents = ({
   bikeList,
