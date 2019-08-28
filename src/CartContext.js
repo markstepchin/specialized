@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 const SEC_SHOW_CART_PREVIEW = 3;
 
@@ -115,5 +115,15 @@ export const CartContext = React.createContext({
   addItem: () => {},
   removeItem: () => {}
 });
+
+export const useCartContext = () => {
+  const context = useContext(CartContext);
+
+  if (!context) {
+    throw new Error('Provider required')
+  }
+
+  return context;
+}
 
 export default CartContainer;
