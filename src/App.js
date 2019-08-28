@@ -11,28 +11,31 @@ import Cart from "./Pages/Cart";
 import Header from "./Layout/Header";
 import Footer from "./Layout/Footer";
 import CartContainer from "./CartContext";
+import ScrollToTop from "./utils/ScrollToTop";
 
 import "./App.scss";
 
 function App() {
   return (
     <Router>
-      <CartContainer>
-        <Header />
-        <div id="page-container">
-          <Route exact path="/" component={() => <LandingPage />} />
-          <Route path="/shop-bikes" component={() => <AllBikesListing />} />
-          <Route path="/shop-trail" component={() => <TrailBikeListing />} />
-          <Route
-            path="/shop-downhill"
-            component={() => <DownhillBikeListing />}
-          />
-          <Route path="/shop-sworks" component={() => <SworksBikeListing />} />
-          <Route path="/shop/:id" component={() => <ProductPage />} />
-          <Route path="/cart" component={() => <Cart />} />
-        </div>
-        <Footer />
-      </CartContainer>
+      <ScrollToTop>
+        <CartContainer>
+          <Header />
+          <div id="page-container">
+            <Route exact path="/" component={() => <LandingPage />} />
+            <Route path="/shop-bikes" component={() => <AllBikesListing />} />
+            <Route path="/shop-trail" component={() => <TrailBikeListing />} />
+            <Route
+              path="/shop-downhill"
+              component={() => <DownhillBikeListing />}
+            />
+            <Route path="/shop-sworks" component={() => <SworksBikeListing />} />
+            <Route path="/shop/:id" component={() => <ProductPage />} />
+            <Route path="/cart" component={() => <Cart />} />
+          </div>
+          <Footer />
+        </CartContainer>
+      </ScrollToTop>
     </Router>
   );
 }
