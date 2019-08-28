@@ -1,18 +1,14 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 
 const SEC_SHOW_CART_PREVIEW = 3;
 
-class CartContainer extends React.Component {
-  state = {
-    items: [],
+export default function CartContainer({ children }) {
+  const [items, setItems] = useState([]);
+  const [itemAdded, setItemAdded] = useState(false);
+  const [hovering, setHovering] = useState(false);
 
-    //used for controlling hover behavior
-    itemAdded: false,
-    hovering: false
-  };
-
-  addItem = id => {
-    const updatedItems = [...this.state.items];
+  function addItem(id) {
+    const updatedItems = [...items];
 
     //check if the item is already in the cart
     let itemExists = false;
@@ -32,26 +28,21 @@ class CartContainer extends React.Component {
       });
     }
 
-    this.setState({
-      items: updatedItems,
-      itemAdded: true
-    });
+    setItems(updatedItems);
+    setItemAdded(true);
 
-    setTimeout(
-      () => this.setState({ itemAdded: false }),
-      SEC_SHOW_CART_PREVIEW * 1000
-    );
-  };
+    setTimeout(() => setItemAdded(false), SEC_SHOW_CART_PREVIEW * 1000);
+  }
 
-  removeItem = id => {
-    const newArray = [...this.state.items];
+  function removeItem(id) {
+    const newArray = [...items];
     newArray.splice(newArray.indexOf(id), 1);
 
-    this.setState({ items: newArray });
-  };
+    setItems(newArray);
+  }
 
-  subtractQuantity = id => {
-    const updatedItems = [...this.state.items];
+  function subtractQuantity(id) {
+    const updatedItems = [...items];
 
     let toRemove = null;
     updatedItems.forEach((item, i) => {
@@ -67,11 +58,11 @@ class CartContainer extends React.Component {
       updatedItems.splice(toRemove, 1);
     }
 
-    this.setState({ items: updatedItems });
-  };
+    setItems(updatedItems);
+  }
 
-  addQuantity = id => {
-    const updatedItems = [...this.state.items];
+  function addQuantity(id) {
+    const updatedItems = [...items];
 
     updatedItems.forEach(item => {
       if (item.id === id) {
@@ -79,35 +70,39 @@ class CartContainer extends React.Component {
       }
     });
 
-    this.setState({ items: updatedItems });
-  };
-
-  onCartPreviewHover = () => this.setState({ hovering: true });
-  onCartPreviewHoverExit = () => this.setState({ hovering: false });
-  /* Need to hide the preview when it's clicked. itemAdded is for displaying cart preview after adding item */
-
-  onCartPreviewClick = () =>
-    this.setState({ hovering: false, itemAdded: false });
-
-  render() {
-    return (
-      <CartContext.Provider
-        value={{
-          items: this.state.items,
-          addItem: this.addItem,
-          removeItem: this.removeItem,
-          addQuantity: this.addQuantity,
-          subtractQuantity: this.subtractQuantity,
-          onCartPreviewHover: this.onCartPreviewHover,
-          onCartPreviewHoverExit: this.onCartPreviewHoverExit,
-          onCartPreviewClick: this.onCartPreviewClick,
-          showPreview: this.state.hovering || this.state.itemAdded
-        }}
-      >
-        {this.props.children}
-      </CartContext.Provider>
-    );
+    setItems(updatedItems);
   }
+
+  function onCartPreviewHover() {
+    setHovering(true);
+  }
+  function onCartPreviewHoverExit() {
+    setHovering(false);
+  }
+
+  /* Need to hide the preview when it's clicked. itemAdded is for displaying cart preview after adding item */
+  function onCartPreviewClick() {
+    setHovering(false);
+    setItemAdded(false);
+  }
+
+  return (
+    <CartContext.Provider
+      value={{
+        items,
+        addItem,
+        removeItem,
+        addQuantity,
+        subtractQuantity,
+        onCartPreviewHover,
+        onCartPreviewHoverExit,
+        onCartPreviewClick,
+        showPreview: hovering || itemAdded
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
 }
 
 export const CartContext = React.createContext({
@@ -120,10 +115,8 @@ export const useCartContext = () => {
   const context = useContext(CartContext);
 
   if (!context) {
-    throw new Error('Provider required')
+    throw new Error("Provider required");
   }
 
   return context;
-}
-
-export default CartContainer;
+};
