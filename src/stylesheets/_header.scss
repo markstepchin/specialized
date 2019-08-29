@@ -9,11 +9,17 @@ header {
 .top-header {
   background-color: rgb(18, 18, 18);
   color: rgb(255, 255, 255);
-  padding-left: 3rem;
+  padding: 0 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: $topHeaderHeight;
+
+  a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding-right: 1rem;
+  }
 
   div {
     letter-spacing: 0.0625em;
@@ -22,7 +28,7 @@ header {
     span {
       font-size: 0.7rem;
       font-weight: 600;
-      padding: 0 1.5rem;
+      padding: 0 .5rem;
     }
 
     .find-retailer-icon {
@@ -130,21 +136,6 @@ header {
     cursor: pointer;
   }
 
-  // .cart-icon {
-  //   background: url('../Assets/Icons/shopping-cart.svg');
-  //   background-position: center;
-  //   background-repeat: no-repeat;
-
-  //   display: inline-block;
-  //   width: 23px;
-  //   height: 23px;
-  //   padding-left: .5rem;
-
-  //   &:hover {
-  //     color: rgb(217,55,49);
-  //   }
-  // }
-
   .search-icon {
     background: url("../Assets/Icons/search.svg");
     background-position: center;
@@ -169,7 +160,7 @@ header {
 @media only screen and (max-width: 1023px) {
   .top-header {
     font-size: 0.8rem;
-    padding-left: 1rem;
+    padding: 0 1rem;
   }
 
   .bottom-header {

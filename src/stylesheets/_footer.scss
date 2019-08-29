@@ -111,11 +111,13 @@ footer {
 .footer-col-3 {
   button {
     background-color: rgb(65, 65, 65);
+    font-size: 1.125rem;
     color: $whiteTextColor;
     text-transform: uppercase;
     width: 18rem;
     height: 2.8rem;
     border: none;
+    cursor: pointer;
 
     &:hover {
       background-color: rgb(190, 38, 33);
@@ -179,6 +181,10 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .find-retailer {
+      width: 100%;
+    }
 
     button {
       margin-top: 4.5rem;

@@ -1,7 +1,7 @@
 import { bikes } from "../DataFiles/BikeData";
 
 export const getCartSubtotal = cartItems => {
-  // getting the prices for items
+  // 1) getting the prices for items
 
   // for every id in cartItems
   const bikeList = Object.keys(cartItems).map(bikeId =>
@@ -9,9 +9,8 @@ export const getCartSubtotal = cartItems => {
     bikes.find(dataBike => dataBike.id === bikeId)
   );
 
-  // calculating the totals
+  // 2: calculating
   const subtotal = bikeList.reduce((acc, curr) => {
-
     // items example: { af23: 3, sd24: 3 }
     // quantity is the value
     const quantity = cartItems[curr.id];

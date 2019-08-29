@@ -12,7 +12,7 @@ const LandingPage = () => (
           the works
         </h1>
         <h3>Its all fun and games until you catch too much air...</h3>
-        <button>demo 8 fsr</button>
+        <Link to='shop-bikes'><button>shop</button></Link>
       </div>
     </div>
     <section id="story">
@@ -26,7 +26,6 @@ const LandingPage = () => (
         focus in school, we started the Specialized Foundation to help them
         through cycling.
       </p>
-      <button>our story</button>
     </section>
     <section id="categories">
       <h3>explore our bikes</h3>
