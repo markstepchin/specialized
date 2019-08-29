@@ -1,114 +1,131 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../CartContext";
-import { bikes } from "../DataFiles/BikeData";
+import { getBikeList } from "../utils/general";
 
 const Cart = () => {
-  const { items, addItem, removeItem, addQuantity, subtractQuantity } = useCartContext();
-
-  const bikeList = Object.keys(items).map(bikeId => {
-    const bike = bikes.find(dataBike => dataBike.id === bikeId);
-    const quantity = items[bikeId];
-
-    return (
-      <ListItem
-        bike={bike}
-        quantity={quantity}
-        addQuantity={addQuantity}
-        removeItem={removeItem}
-        subtractQuantity={subtractQuantity}
-      />
-    );
-  });
+  const {
+    items,
+    addItem,
+    removeItem,
+    addQuantity,
+    subtractQuantity
+  } = useCartContext();
+  const bikeList = getBikeList(items);
 
   return (
     <section id="cart">
       <h1 className="cart-col">Shopping cart</h1>
       {bikeList.length > 0 ? (
-        <div id="cart-contents">
-          <div className="cart-col" style={{ flexGrow: 2 }}>
-            {bikeList}
-          </div>     
-          <CartSummary bikeList={bikeList} />
-        </div>
+        <CartContents
+          bikeList={bikeList}
+          addItem={addItem}
+          addQuantity={addQuantity}
+          removeItem={removeItem}
+          subtractQuantity={subtractQuantity}
+        />
       ) : (
         <EmptyCartMessage />
       )}
       <CartFooter />
     </section>
   );
-};
+}
 
-const ListItem = ({
-  bike,
-  quantity,
+const CartContents = ({
+  bikeList,
+  removeItem,
+  addItem,
   addQuantity,
-  subtractQuantity,
-  removeItem
+  subtractQuantity
 }) => (
-  <div id="cart-listing">
-    <div className="col">
-      <h3>details</h3>
-      <div className="details-container">
-        <div style={{ width: "150px", height: "150px" }}>
-          <img src={bike.image} alt="product" />
-        </div>
-        <div style={{ padding: "0 2rem" }}>
-          <h4>{bike.details.name}</h4>
-          <span>Part No. {bike.details.partNumber}</span>
-          <h5>In Stock</h5>
-        </div>
-      </div>
-    </div>
+  <div id="cart-contents">
+    <CartListing
+      bikeList={bikeList}
+      removeItem={removeItem}
+      addItem={addItem}
+      addQuantity={addQuantity}
+      subtractQuantity={subtractQuantity}
+    />
+    <CartSummary bikeList={bikeList} />
+  </div>
+);
 
-    <div className="other-details-container cart-col">
-      <div>
-        <h3>price</h3>
-        <div>
-          <span className="price">${bike.details.price}</span>
+const CartListing = ({
+  bikeList,
+  removeItem,
+  addItem,
+  addQuantity,
+  subtractQuantity
+}) => (
+  <div className="cart-col" style={{ flexGrow: 2 }}>
+    {bikeList.map(bike => (
+      <div id="cart-listing">
+        <div className="col">
+          <h3>details</h3>
+          <div className="details-container">
+            <div style={{ width: "150px", height: "150px" }}>
+              <img src={bike.image} alt="product" />
+            </div>
+            <div style={{ padding: "0 2rem" }}>
+              <h4>{bike.details.name}</h4>
+              <span>Part No. {bike.details.partNumber}</span>
+              <h5>In Stock</h5>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div>
-        <h3>quantity</h3>
-        <div>
-          <button
-            style={{ padding: "0 1rem" }}
-            onClick={() => subtractQuantity(bike.id)}
-          >
-            -
-          </button>
-          <span className="quantity">{quantity}</span>
-          <button
-            style={{ padding: "0 1rem" }}
-            onClick={() => addQuantity(bike.id)}
-          >
-            +
-          </button>
-        </div>
-        <div>
-          <button id="remove-from-cart" onClick={() => removeItem(bike.id)}>
-            remove
-          </button>
-        </div>
-      </div>
+        <div className="other-details-container cart-col">
+          <div>
+            <h3>price</h3>
+            <div>
+              <span className="price">${bike.details.price}</span>
+            </div>
+          </div>
 
-      <div>
-        <h3>total</h3>
-        <div>
-          <span className="price">${bike.details.price * quantity}</span>
+          <div>
+            <h3>quantity</h3>
+            <div>
+              <button
+                style={{ padding: "0 1rem" }}
+                onClick={() => subtractQuantity(bike.id)}
+              >
+                -
+              </button>
+              <span className="quantity">{bike.quantity}</span>
+              <button
+                style={{ padding: "0 1rem" }}
+                onClick={() => addQuantity(bike.id)}
+              >
+                +
+              </button>
+            </div>
+            <div>
+              <button id="remove-from-cart" onClick={() => removeItem(bike.id)}>
+                remove
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <h3>total</h3>
+            <div>
+              <span className="price">
+                ${bike.details.price * bike.quantity}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    ))}
   </div>
 );
 
 const CartSummary = ({ bikeList }) => {
-  // const subtotal = bikeList.reduce(
-  //   (acc, curr) => acc + curr.details.price * curr.quantity,
-  //   0
-  // );
-  const subtotal = 0;
+  const subtotal = bikeList.reduce(
+    (acc, curr) => acc + curr.details.price * curr.quantity,
+    0
+  );
   const tax = parseFloat(subtotal * 0.087).toFixed(2);
   //rounding to 2 decimal places
   const orderTotal = parseFloat(subtotal + parseInt(tax)).toFixed(2);
