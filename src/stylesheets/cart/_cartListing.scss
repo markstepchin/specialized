@@ -75,6 +75,10 @@
     display: flex;
     justify-content: space-around;
     flex-grow: 1;
+
+     h3 {
+       text-align: center;
+     }
   }
 
   button {
