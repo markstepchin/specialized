@@ -17,7 +17,7 @@ export default function CartPreview() {
     <>
       <Link 
         to='/cart' 
-        className='cart-icon'
+        className={`cart-icon ${showPreview && 'cart-icon-active'}`}
         onClick={() => onCartPreviewClick()}
         onMouseEnter={() => onCartPreviewHover()}
         onMouseLeave={() => onCartPreviewHoverExit()}>

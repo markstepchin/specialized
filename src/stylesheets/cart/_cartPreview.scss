@@ -5,10 +5,15 @@ a.cart-icon {
   align-items: center;
   font-size: 1.5rem;
   padding: 0 1rem;
+  transition: color .25s;
 
   &:hover {
     color: rgb(217, 55, 49);
   }
+}
+
+a.cart-icon.cart-icon-active {
+  color: rgb(217, 55, 49);
 }
 
 #cart-preview {
