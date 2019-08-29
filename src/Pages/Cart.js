@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../CartContext";
 import { bikes } from "../DataFiles/BikeData";
+import { getCartSubtotal } from "../utils/general";
 
 const Cart = () => {
-  const { items, addItem, removeItem, addQuantity, subtractQuantity } = useCartContext();
+  const { items, removeItem, addQuantity, subtractQuantity } = useCartContext();
 
   const bikeList = Object.keys(items).map(bikeId => {
     const bike = bikes.find(dataBike => dataBike.id === bikeId);
@@ -29,7 +30,7 @@ const Cart = () => {
           <div className="cart-col" style={{ flexGrow: 2 }}>
             {bikeList}
           </div>     
-          <CartSummary bikeList={bikeList} />
+          <CartSummary items={items} />
         </div>
       ) : (
         <EmptyCartMessage />
@@ -103,12 +104,9 @@ const ListItem = ({
   </div>
 );
 
-const CartSummary = ({ bikeList }) => {
-  // const subtotal = bikeList.reduce(
-  //   (acc, curr) => acc + curr.details.price * curr.quantity,
-  //   0
-  // );
-  const subtotal = 0;
+const CartSummary = ({ items }) => {
+  const subtotal = getCartSubtotal(items);
+
   const tax = parseFloat(subtotal * 0.087).toFixed(2);
   //rounding to 2 decimal places
   const orderTotal = parseFloat(subtotal + parseInt(tax)).toFixed(2);
