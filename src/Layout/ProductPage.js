@@ -40,11 +40,10 @@ const DisplayFooter = ({ id, details: { name, price, partNumber } }) => {
       <span className='in-stock'>In Stock</span>
 
       <div className='section-3'>
+        <button>find nearby</button>
         <button onClick={() => addItem(id)}>
           add to cart
         </button>
-        <button>tune my suspension</button>
-        <button>find nearby</button>
       </div>
     </section>
   )
