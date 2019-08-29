@@ -22,9 +22,9 @@ function App() {
         <CartContainer>
           <Header />
           <div id="page-container">
-            <Route exact path="/" component={() => <LandingPage />} />
-            <Route path="/shop-bikes" component={() => <AllBikesListing />} />
-            <Route path="/shop-trail" component={() => <TrailBikeListing />} />
+            <Route exact path="/" component={LandingPage} />
+            <Route path="/shop-bikes" component={AllBikesListing} />
+            <Route path="/shop-trail" component={TrailBikeListing} />
             <Route
               path="/shop-downhill"
               component={() => <DownhillBikeListing />}

@@ -7,81 +7,49 @@ export default function CartContainer({ children }) {
   const [itemAdded, setItemAdded] = useState(false);
   const [hovering, setHovering] = useState(false);
 
-  function addItem(id) {
-    const updatedItems = [...items];
-
-    //check if the item is already in the cart
+  const addItem = id => {
     let itemExists = false;
-    updatedItems.forEach(item => {
-      //if yes, increment the quantity for the corresponding id
+    for (const item of items) {
       if (item.id === id) {
-        item.quantity++;
         itemExists = true;
       }
-    });
-
-    //if not, add the item
-    if (!itemExists) {
-      updatedItems.push({
-        id,
-        quantity: 1
-      });
     }
 
-    setItems(updatedItems);
+    if (itemExists) {
+      addQuantity(id);
+    } else {
+      setItems(oldItems => [...oldItems, { id, quantity: 1 }]);
+    }
+
     setItemAdded(true);
-
     setTimeout(() => setItemAdded(false), SEC_SHOW_CART_PREVIEW * 1000);
-  }
+  };
 
-  function removeItem(id) {
-    const newArray = [...items];
-    newArray.splice(newArray.indexOf(id), 1);
+  const removeItem = id =>
+    setItems(oldItems => oldItems.filter(item => item.id !== id));
 
-    setItems(newArray);
-  }
+  const subtractQuantity = id =>
+    setItems(oldItems =>
+      oldItems
+        .map(item =>
+          item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+        )
+        //if the item's quantity is 0, remove from the cart
+        .filter(item => item.quantity > 0)
+    );
 
-  function subtractQuantity(id) {
-    const updatedItems = [...items];
+  const addQuantity = id =>
+    setItems(oldItems =>
+      oldItems.map(item =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
 
-    let toRemove = null;
-    updatedItems.forEach((item, i) => {
-      if (item.id === id) {
-        item.quantity--;
-        if (item.quantity === 0) {
-          toRemove = i;
-        }
-      }
-    });
-
-    if (toRemove !== null) {
-      updatedItems.splice(toRemove, 1);
-    }
-
-    setItems(updatedItems);
-  }
-
-  function addQuantity(id) {
-    const updatedItems = [...items];
-
-    updatedItems.forEach(item => {
-      if (item.id === id) {
-        item.quantity++;
-      }
-    });
-
-    setItems(updatedItems);
-  }
-
-  function onCartPreviewHover() {
-    setHovering(true);
-  }
-  function onCartPreviewHoverExit() {
-    setHovering(false);
-  }
+  const onCartPreviewHover = () => setHovering(true);
+  const onCartPreviewHoverExit = () => setHovering(false);
 
   /* Need to hide the preview when it's clicked. itemAdded is for displaying cart preview after adding item */
-  function onCartPreviewClick() {
+  const onCartPreviewClick = () => {
     setHovering(false);
     setItemAdded(false);
   }
