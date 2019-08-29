@@ -8,11 +8,10 @@ export default function CartPreview() {
   const { items, removeItem, onCartPreviewHover, onCartPreviewHoverExit, onCartPreviewClick, showPreview } = useCartContext();
 
   const bikeList = Object.keys(items).map(bikeId =>
-    // find the corresponding bike in the bike data object
+    // find the corresponding bike for every id in the bike data object
     bikes.find(dataBike => dataBike.id === bikeId)
   );
   const subtotal = getCartSubtotal(items);
-  console.log(items)
 
   return (
     <>
