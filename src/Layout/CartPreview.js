@@ -1,13 +1,18 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { useCartContext } from '../CartContext';
-import { getBikeList } from "../utils/general";
+import { getCartSubtotal } from "../utils/general";
+import { bikes } from "../DataFiles/BikeData";
 
 export default function CartPreview() {
   const { items, removeItem, onCartPreviewHover, onCartPreviewHoverExit, onCartPreviewClick, showPreview } = useCartContext();
 
-  const bikeList = getBikeList(items);
-  const subtotal = bikeList.reduce((acc, curr) => acc + parseInt(curr.details.price) * curr.quantity, 0);
+  const bikeList = Object.keys(items).map(bikeId =>
+    // find the corresponding bike in the bike data object
+    bikes.find(dataBike => dataBike.id === bikeId)
+  );
+  const subtotal = getCartSubtotal(items);
+  console.log(items)
 
   return (
     <>
@@ -24,7 +29,7 @@ export default function CartPreview() {
           id='cart-preview' 
           onMouseEnter={() => onCartPreviewHover()}
           onMouseLeave={() => onCartPreviewHoverExit()}>
-          <CartListing bikeList={bikeList} removeItem={removeItem}/>
+          <CartListing bikeList={bikeList} removeItem={removeItem} items={items}/>
           <CartSubtotal subtotal={subtotal}/>
           <Link 
             to='/cart'
@@ -38,7 +43,7 @@ export default function CartPreview() {
   )
 }
 
-const CartListing = ({ bikeList, removeItem }) => (
+const CartListing = ({ bikeList, removeItem, items }) => (
   <div id='preview-item-listing'>
     {bikeList.length === 0 ? (
       <span style={{ fontSize: '.9rem', fontWeight: '400' }}>cart is empty</span>
@@ -52,7 +57,7 @@ const CartListing = ({ bikeList, removeItem }) => (
           <div className='details'>
             <h3>{bike.details.name}</h3>
             <h4>${bike.details.price}</h4>
-            <h4>QTY {bike.quantity}</h4>
+            <h4>QTY {items[bike.id]}</h4>
           </div>
           <button className='close-button' onClick={() => removeItem(bike.id)}>
             <ion-icon name="close"></ion-icon>
