@@ -1,9 +1,6 @@
-import uuidv4 from 'uuid/v4';
-const generateId = () => uuidv4().slice(0,10);
-
 export const bikes = [
 	{
-		id: generateId(),
+		id: 'ecf4-ca87-11e9',
 		details: {
 			name: 'Stumpjumper Pro 29',
 			price: 6300,
@@ -15,7 +12,7 @@ export const bikes = [
 		],
 	},
 	{
-		id: generateId(),
+		id: 'f302-ca87-11e9',
 		details: {
 			name: 'StumpJumper Expert 29',
 			price: 5000,
@@ -30,7 +27,7 @@ export const bikes = [
 		],
 	},
 	{
-		id: generateId(),
+		id: 'f488-ca87-11e9',
 		details: {
 			name: 'StumpJumper Expert 27.5',
 			price: 5000,
@@ -47,7 +44,7 @@ export const bikes = [
 		],
 	},
 	{
-		id: generateId(),
+		id: '5be-ca87',
 		details: {
 			name: 'Fuse Expert 29',
 			price: 2100,
@@ -61,7 +58,7 @@ export const bikes = [
 		],
 	},
 	{
-		id: generateId(),
+		id: '6ea-ca87',
 		details: {
 			name: 'Fuse Expert 27.5',
 			price: 2000,
@@ -73,7 +70,7 @@ export const bikes = [
 		],
 	},
 	{
-		id: generateId(),
+		id: '816-ca87',
 		details: {
 			name: 'Demo Racer 29',
 			price: 6500,
@@ -90,7 +87,7 @@ export const bikes = [
 		],
 	},
 	{
-		id: generateId(),
+		id: '938-ca87',
 		details: {
 			name: 'Demo Expert 29',
 			price: 6300,
@@ -108,7 +105,7 @@ export const bikes = [
 		],
 	},
 	{
-		id: generateId(),
+		id: 'c3a-ca87',
 		details: {
 			name: 'Demo Alloy 27.5',
 			price: 3400,
@@ -124,7 +121,7 @@ export const bikes = [
 		],
 	},
 	{
-		id: generateId(),
+		id: 'd8e-ca87',
 		details: {
 			name: 'S-Works Epic EVO',
 			price: 9500,
@@ -141,7 +138,7 @@ export const bikes = [
 		],
 	},
 	{
-		id: generateId(),
+		id: 'eb0-ca87',
 		details: {
 			name: 'S-Works StumpJumper 29',
 			price: 9520,
@@ -153,7 +150,7 @@ export const bikes = [
 		],
 	},
 	{
-		id: generateId(),
+		id: 'fd2-ca87',
 		details: {
 			name: 'S-Works StumpJumper 27.5',
 			price: 9520,
@@ -165,7 +162,7 @@ export const bikes = [
 		],
 	},
 	{
-		id: generateId(),
+		id: '0f4-ca87',
 		details: {
 			name: 'S-Works Demo 8 Frame',
 			price: 4000,
@@ -181,19 +178,19 @@ export const bikes = [
 
 export default [
 	{
-		id: generateId(),
+		id: '41e-ca87',
 		title: 'DownHill',
 		routeName: 'shop/downhill',
 		items: bikes.slice(5,8)
 	},
 	{
-		id: generateId(),
+		id: '55e-ca87',
 		title: 'Trail',
 		routeName: 'shop/trail',
 		items: bikes.slice(0,5)
 	},
 	{
-		id: generateId(),
+		id: '068a-ca87',
 		title: 'S-Works',
 		routeName: 'shop/s-works',
 		items: bikes.slice(8)
